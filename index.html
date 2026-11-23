@@ -3,117 +3,267 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#19244e">
-  <title>Lesgou — Todo tu viaje, conectado.</title>
-  <meta name="description" content="Conoce Lesgou: una nueva forma de organizar tus viajes por Venezuela. Hospedaje, vuelos, transporte, actividades y restaurantes. Un espacio para viajeros y proveedores turísticos.">
-  <meta property="og:title" content="Lesgou — Todo tu viaje, conectado.">
-  <meta property="og:description" content="Tu próximo viaje y las personas que lo hacen posible, conectados en un solo lugar.">
+  <meta name="theme-color" content="#08141c">
+  <title>Lesgou — Que lo difícil sea volver.</title>
+  <meta name="description" content="Lesgou conecta todo tu viaje por Venezuela y está hecho para viajar en grupo: quién va, qué hace cada uno y cuánto paga, desde su teléfono. Para viajeros y prestadores de servicios turísticos.">
+  <meta property="og:title" content="Lesgou — Que lo difícil sea volver.">
+  <meta property="og:description" content="Todo el viaje, con tu gente. Cada quien elige lo suyo y paga su parte desde su teléfono.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_VE">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2319244e'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-family='Arial,sans-serif' font-size='44' font-weight='bold' fill='%232fbfa6'%3EG%3C/text%3E%3C/svg%3E">
-  <link rel="preload" as="image" href="/assets/morrocoy.webp" fetchpriority="high">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2308141c'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-family='Arial,sans-serif' font-size='44' font-weight='bold' fill='%232fbfa6'%3EG%3C/text%3E%3C/svg%3E">
+  <link rel="preload" as="image" href="/assets/margarita.webp" fetchpriority="high">
   <link rel="preload" as="font" href="/assets/manrope-variable.ttf" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/styles.css">
+  <script src="/config.js" defer></script>
   <script src="/script.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#contenido" data-en="Skip to content">Saltar al contenido</a>
-  <svg xmlns="http://www.w3.org/2000/svg" class="icon-definitions" aria-hidden="true">
-    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
-    <symbol id="i-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></symbol>
-    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
-    <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 18v3m18-3v3M3 10V4h18v6M2 18v-5a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v5ZM7 10V7h10v3"/></symbol>
-    <symbol id="i-plane" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9L2 9Z"/><path d="M22 2 11 13"/></symbol>
-    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 8-2 6-6 2 2-6Z"/></symbol>
-    <symbol id="i-food" viewBox="0 0 24 24"><path d="M4 2v6a3 3 0 0 0 6 0V2M7 2v20M20 22V2c-4 3-4 9 0 10"/></symbol>
-    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
-    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v11H3ZM9 21v-8h6v8"/></symbol>
-    <symbol id="i-car" viewBox="0 0 24 24"><path d="m5 7 2-4h10l2 4 2 4v8H3v-8l2-4ZM5 7h14M3 19v2m18-2v2M7 13h.01M17 13h.01"/></symbol>
-    <symbol id="i-boat" viewBox="0 0 24 24"><path d="M7 10V5h10v5M12 5V2m0 7 10 4-4 6H6l-4-6ZM2 22l3-2 4 2 3-2 4 2 3-2 3 2"/></symbol>
-    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
-    <symbol id="i-route" viewBox="0 0 24 24"><circle cx="5" cy="5" r="3"/><circle cx="19" cy="19" r="3"/><path d="M8 5h8a4 4 0 0 1 0 8H8a4 4 0 0 0 0 8h8"/></symbol>
-    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
-  </svg>
-  <header class="header" id="inicio">
-    <div class="header-inner">
-      <a class="brand" href="#inicio" aria-label="Lesgou, inicio" data-en-aria="Lesgou, home"><img src="/assets/lesgou-logo.png" alt="Lesgou" width="680" height="200"></a>
-      <button class="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-navigation"><svg class="icon"><use href="#i-menu"/></svg></button>
-      <nav class="navigation" id="main-navigation" aria-label="Navegación principal" data-en-aria="Main navigation">
-        <a href="#viajeros" data-en="For travelers">Para viajeros</a><a href="#como-funciona" data-en="How it works">Cómo funciona</a><a href="#proveedores" data-en="For providers">Para proveedores</a>
-        <a class="button button-small button-accent" href="#descubre" data-en="Discover Lesgou <svg class='icon'><use href='#i-up-right'/></svg>">Conoce Lesgou <svg class="icon"><use href="#i-up-right"/></svg></a>
-        <button class="language-toggle" type="button" aria-label="Cambiar idioma a inglés" aria-pressed="false"><span class="language-option is-active">ES</span><span aria-hidden="true">/</span><span class="language-option">EN</span></button>
-      </nav>
+<a class="skip-link" href="#contenido" data-en="Skip to content">Saltar al contenido</a>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-plane" viewBox="0 0 24 24"><path d="M10.5 13.5 4 11l1.5-1.5 7 .5 4-4c.8-.8 2.2-.8 3 0s.8 2.2 0 3l-4 4 .5 7L14.5 21 12 14.5l-2.5 2.5.5 2-1.5 1.5-1.5-3.5L3.5 15.5 5 14l2 .5z"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 16V11l2-5h10l2 5v5M3 16h18v3h-3v-1H6v1H3zM7 13h.01M17 13h.01"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><path d="M14.5 9.5a4 4 0 1 0-.01 0M11.6 12.4 4 20M6.5 17.5 9 20M8.5 15.5 11 18"/></symbol>
+  <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 18V7M3 14h18v4M21 14v-2a3 3 0 0 0-3-3h-7v5M7 11.5a1.5 1.5 0 1 0 0-.01"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11 12 4l8 7M6 9.5V20h12V9.5M10 20v-5h4v5"/></symbol>
+  <symbol id="i-tent" viewBox="0 0 24 24"><path d="M3 20 12 5l9 15zM12 5v15M9 20l3-6 3 6"/></symbol>
+  <symbol id="i-boat" viewBox="0 0 24 24"><path d="M3 15h18l-2.5 4.5h-13zM12 4v11M12 5l6 7h-6"/><path d="M2 21c2 0 2-1 4-1s2 1 4 1 2-1 4-1 2 1 4 1 2-1 4-1"/></symbol>
+  <symbol id="i-food" viewBox="0 0 24 24"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10M16 21V3c-2 1.5-3 4-3 7h3"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M9 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM2.5 20c.5-3.5 3.2-5.5 6.5-5.5s6 2 6.5 5.5M16 4.5a3.5 3.5 0 0 1 0 6.5M18 14.8c2 .7 3.3 2.5 3.5 5.2"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM4 21c.6-4 3.8-6.5 8-6.5s7.4 2.5 8 6.5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 1 1 12 0v5l1.5 2h-15zM10 21h4"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 19.5 5.3 16A7.5 7.5 0 1 1 8 18.7z"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+  <symbol id="i-wave" viewBox="0 0 24 24"><path d="M2 12c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2M2 17c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 6h18v12H3zM3 7l9 6 9-6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M7 3h10v18H7zM11 18h2"/></symbol>
+  <symbol id="i-at" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a2.5 2.5 0 0 0 5 0v-1a9 9 0 1 0-3.5 7.1"/></symbol>
+  <symbol id="i-note" viewBox="0 0 24 24"><path d="M5 4h14v16H5zM9 9h6M9 13h6M9 17h3"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+</svg>
+
+<header class="bar">
+  <a class="wordmark" href="#contenido" aria-label="Lesgou, inicio" data-en-aria="Lesgou, home"><img src="/assets/lesgou-logo.png" alt="Lesgou" width="102" height="30"></a>
+  <nav class="nav" aria-label="Navegación principal" data-en-aria="Main navigation">
+    <a href="#como" data-en="How it works">Cómo funciona</a>
+    <a href="#destinos" data-en="Destinations">Destinos</a>
+    <a href="#proveedores" data-en="For providers">Para proveedores</a>
+  </nav>
+  <button class="lang language-toggle" type="button" aria-pressed="false">EN</button>
+</header>
+
+<main id="contenido">
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-bg"><img src="/assets/margarita.webp" alt="Playa El Agua, isla de Margarita." data-en-alt="Playa El Agua, Margarita Island." width="1600" height="1067" fetchpriority="high"></div>
+  <div>
+    <h1 class="mega" id="hero-title" data-en="<span>Margarita</span><span class='teal'>is waiting.</span>"><span>Margarita</span><span class="teal">los espera.</span></h1>
+    <p class="lede" data-en="The whole trip, with your people. Everyone picks what they want and pays their share from their own phone.">Todo el viaje, con tu gente. Cada quien elige lo suyo y paga su parte desde su teléfono.</p>
+    <div class="cta-row">
+      <a class="fx fx-teal" data-waitlist="web-inicio" href="/lista-de-espera/?origen=web-inicio"><span data-en="Reserve your spot">Reserva tu lugar</span> <span class="knob"><svg class="icon"><use href="#i-arrow"/></svg></span></a>
+      <a class="fx fx-ghost" href="#como" data-en="How it works">Así funciona</a>
     </div>
-  </header>
-  <main id="contenido">
-    <section class="hero" aria-labelledby="hero-title">
-      <img class="hero-image" src="/assets/morrocoy.webp" alt="Palmeras sobre la arena blanca y aguas turquesas de Cayo Sombrero, Parque Nacional Morrocoy." data-en-alt="Palm trees over the white sand and turquoise water of Cayo Sombrero, Morrocoy National Park." width="1920" height="1306" fetchpriority="high">
-      <div class="hero-shade"></div>
-      <div class="hero-content">
-        <div class="eyebrow hero-eyebrow" data-en="<span class='eyebrow-line'></span>VENEZUELA, FROM START TO FINISH"><span class="eyebrow-line"></span>VENEZUELA, DE PRINCIPIO A FIN</div>
-        <h1 id="hero-title" data-en="Your whole trip,<br><span>connected.</span>">Todo tu viaje,<br><span>conectado.</span></h1>
-        <p data-en="That trip you have in mind, with everything you need to experience it. Lodging, transportation and experiences, all connected in one place.">Ese viaje que tienes en mente, con todo lo que necesitas para vivirlo. Hospedaje, transporte y experiencias, conectados en un solo lugar.</p>
-        <div class="hero-actions"><a class="button button-accent" href="#viajeros" data-en="This is what your next trip looks like <svg class='icon'><use href='#i-arrow'/></svg>">Así será tu próximo viaje <svg class="icon"><use href="#i-arrow"/></svg></a><a class="hero-provider" href="#proveedores" data-en="I run a travel service <svg class='icon'><use href='#i-up-right'/></svg>">Tengo un servicio turístico <svg class="icon"><use href="#i-up-right"/></svg></a></div>
-        <div class="launch-note" data-en="A new way to travel. Coming soon.">Una nueva forma de viajar. Próximamente.</div>
+  </div>
+
+  <aside class="bill sheet rv" aria-label="Ejemplo de cuentas del viaje" data-en-aria="Example trip bill">
+    <div class="bill-head"><b data-en="Trip bill">Cuentas del viaje</b><span class="example" data-en="EXAMPLE">EJEMPLO</span></div>
+    <div class="bill-total">
+      <div class="big tabnum">USD <span id="tot">0</span></div>
+      <small data-en="Margarita Island · Fri 17 – Sun 19">Isla de Margarita · Vie 17 – Dom 19</small>
+      <div class="bar-prog"><i id="prog"></i></div>
+    </div>
+    <div class="bill-people">
+      <div><div class="q" data-en="How many are going?">¿Cuántos van?</div><div class="avas" id="avas" style="margin-top:8px"></div></div>
+      <div class="step"><button type="button" id="minus" aria-label="Una persona menos" data-en-aria="One person less"><svg class="icon"><use href="#i-minus"/></svg></button><output id="n" aria-live="polite">4</output><button type="button" class="plus" id="plus" aria-label="Una persona más" data-en-aria="One more person"><svg class="icon"><use href="#i-plus"/></svg></button></div>
+    </div>
+    <div id="items">
+      <div class="row"><span class="ico"><svg class="icon"><use href="#i-plane"/></svg></span><div class="t"><b data-en="Round-trip flights">Vuelos ida y vuelta</b><small>Caracas – Porlamar</small></div><span class="amt tabnum" data-i="0"></span></div>
+      <div class="row"><span class="ico"><svg class="icon"><use href="#i-car"/></svg></span><div class="t"><b data-en="Airport transfer">Traslado del aeropuerto</b><small data-en="For the whole group">Para todo el grupo</small></div><span class="amt tabnum" data-i="1"></span></div>
+      <div class="row"><span class="ico"><svg class="icon"><use href="#i-bed"/></svg></span><div class="t"><b data-en="Beachfront posada">Posada frente al mar</b><small data-en="2 nights · breakfast">2 noches · desayuno</small></div><span class="amt tabnum" data-i="2"></span></div>
+      <div class="row"><span class="ico"><svg class="icon"><use href="#i-car"/></svg></span><div class="t"><b data-en="Driver for the day">Chofer por día</b><small data-en="Sat 18 · 8 h">Sáb 18 · 8 h</small></div><span class="amt tabnum" data-i="3"></span></div>
+      <div class="row"><span class="ico"><svg class="icon"><use href="#i-boat"/></svg></span><div class="t"><b data-en="Boat to the cays">Lancha a los cayos</b><small data-en="Sun 19 · half day">Dom 19 · medio día</small></div><span class="amt tabnum" data-i="4"></span></div>
+    </div>
+    <div class="bill-foot">
+      <div><small data-en="Each person pays">Cada quien paga</small><div class="pp tabnum">USD <span id="pp">0</span></div></div>
+      <span class="chip ok"><svg class="icon" style="width:14px;height:14px"><use href="#i-check"/></svg><span data-en="Nothing is charged until you pay">Nada se cobra hasta que pagues</span></span>
+    </div>
+  </aside>
+</section>
+
+<section class="chat-sec" aria-labelledby="chat-title">
+  <div class="wrap chat-grid">
+    <div class="thread" id="thread" aria-label="Chat de grupo de ejemplo" data-en-aria="Example group chat">
+      <span class="unread" data-en="47 unread messages">47 mensajes sin leer</span>
+      <div class="msg" data-p="b"><span class="ava b" aria-hidden="true">A</span><div class="txt"><b>Ana</b><span data-en="so who's actually going??">¿al final quién va??</span></div></div>
+      <div class="msg" data-p="c"><span class="ava c" aria-hidden="true">L</span><div class="txt"><b>Luis</b><span data-en="I'm in but not for the boat 🙃">yo voy pero no a la lancha 🙃</span></div></div>
+      <div class="msg me" data-p="a"><span class="ava a" aria-hidden="true">D</span><div class="txt"><b data-en="You (Daniel)">Tú (Daniel)</b><span data-en="and how much is it per head?">¿y cuánto sale por cabeza?</span></div></div>
+      <div class="msg" data-p="d"><span class="ava d" aria-hidden="true">C</span><div class="txt"><b>Carla</b><span data-en="I land on Saturday from Madrid">yo llego el sábado desde Madrid</span></div></div>
+      <div class="msg" data-p="b"><span class="ava b" aria-hidden="true">A</span><div class="txt"><b>Ana</b><span data-en="send me the pago móvil again pls">pásame el pago móvil de nuevo porfa</span></div></div>
+      <div class="msg" data-p="c"><span class="ava c" aria-hidden="true">L</span><div class="txt"><b>Luis</b><span data-en="who's paying for Sofi?">¿quién paga lo de Sofi?</span></div></div>
+    </div>
+    <div class="chat-copy rv">
+      <h2 class="h-l" id="chat-title" data-en="Group travel shouldn't be a second job.">Viajar en grupo no debería ser un segundo trabajo.</h2>
+      <p class="lede" data-en="Who's going, what each person does, how much they owe and who already paid. Lesgou puts it all in one trip, and everyone sees it from their own phone.">Quién va, qué hace cada uno, cuánto le toca y quién ya pagó. Lesgou lo ordena en un solo viaje, y cada quien lo ve desde su teléfono.</p>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="como" aria-label="Cómo funciona" data-en-aria="How it works">
+  <div class="wrap how-grid">
+    <div class="steps-col">
+      <article class="stp" data-s="0"><h2 class="h-l" data-en="Who's going?">¿Quiénes van?</h2><p data-en="Share a link on WhatsApp and everyone joins the trip. No more lists in the chat.">Compartes un enlace por WhatsApp y cada uno se une al viaje. Sin listas en el chat.</p></article>
+      <article class="stp" data-s="1"><h2 class="h-l" data-en="To each <span class='teal'>their own.</span>">Cada quien, <span class="teal">lo suyo.</span></h2><p data-en="Luis isn't going on the boat? Take it off and his share recalculates itself. Try the switches.">¿Luis no va a la lancha? Lo quitas y su parte se recalcula sola. Toca los interruptores.</p></article>
+      <article class="stp" data-s="2"><h2 class="h-l" data-en="Pay for someone else.">Paga por otro.</h2><p data-en="For your younger sister, your mom or as a gift. Lesgou asks only what it needs and keeps track of who authorized it.">Para tu hermana menor, tu mamá o un regalo. Lesgou pide lo justo y guarda quién autorizó.</p></article>
+      <article class="stp" data-s="3"><h2 class="h-l" data-en="If something changes, <span class='mango'>we'll tell you.</span>">Si algo cambia, <span class="mango">te avisamos.</span></h2><p data-en="Before paying, everyone sees the change. Nothing is charged until they confirm.">Antes de pagar, cada uno ve el cambio. Nada se cobra hasta que confirma.</p></article>
+      <article class="stp" data-s="4"><h2 class="h-l" data-en="Pay the way you do here.">Pagas como aquí.</h2><p data-en="Pago móvil, bank transfer or card, in bolívares at the day's rate. Your receipt stays in the trip.">Pago móvil, transferencia o tarjeta, en bolívares a tasa del día. Tu comprobante queda en el viaje.</p></article>
+    </div>
+
+    <div class="stage" aria-live="polite">
+      <div class="screen sheet who" data-s="0">
+        <div class="grab"></div>
+        <div class="scr-h"><b data-en="Who's going?">¿Quiénes van?</b><small data-en="Margarita Island · Oct 17 – 19">Isla de Margarita · 17 – 19 oct</small></div>
+        <div class="invite"><button class="fx fx-teal fx-sm" type="button" id="wa"><svg class="icon"><use href="#i-chat"/></svg>WhatsApp</button><button class="fx fx-ghost fx-sm" type="button"><svg class="icon"><use href="#i-link"/></svg><span data-en="Copy link">Copiar enlace</span></button></div>
+        <div id="joiners">
+          <div class="row"><span class="ava a">D</span><div class="t"><b>Daniel</b><small data-en="Organizer">Organiza</small></div><span class="chip muted" data-en="You">Tú</span></div>
+          <div class="row"><span class="ava b">A</span><div class="t"><b>Ana</b><small data-en="Joined with the link">Se unió por el enlace</small></div><span class="chip ok" data-en="Joined">Unida</span></div>
+          <div class="row"><span class="ava c">L</span><div class="t"><b>Luis</b><small data-en="Joined with the link">Se unió por el enlace</small></div><span class="chip ok" data-en="Joined">Unido</span></div>
+          <div class="row"><span class="ava d">C</span><div class="t"><b>Carla</b><small data-en="Invite sent">Invitación enviada</small></div><span class="chip" data-en="Pending">Pendiente</span></div>
+        </div>
       </div>
-      <div class="hero-location"><svg class="icon"><use href="#i-pin"/></svg><span>Morrocoy<span>Falcón, Venezuela</span></span></div>
-      <a class="hero-scroll" href="#descubre" aria-label="Descubre Lesgou" data-en-aria="Discover Lesgou"><span data-en="THE JOURNEY STARTS HERE">EL VIAJE EMPIEZA AQUÍ</span><svg class="icon"><use href="#i-arrow"/></svg></a>
-    </section>
-    <section class="intro container" id="descubre" aria-labelledby="intro-title">
-      <div class="intro-mark" aria-hidden="true"><svg class="icon"><use href="#i-route"/></svg></div>
-      <h2 id="intro-title" data-en="The hard part should be choosing<br>the destination. <span>Not organizing the trip.</span>">Lo difícil debería ser elegir<br>el destino. <span>No organizar el viaje.</span></h2>
-      <p data-en="One chat for the lodging, another for the ride, and the activities on your own. Lesgou exists to bring those pieces together and give you back what matters: the urge to go.">Un chat para el hospedaje, otro para el traslado y las actividades por tu cuenta. Lesgou nace para unir esas piezas y devolverte lo que importa: las ganas de ir.</p>
-    </section>
-    <section class="travelers section container" id="viajeros" aria-labelledby="travelers-title">
-      <div class="section-heading reveal"><div><p class="eyebrow" data-en="01 / FOR THOSE READY TO GO">01 / PARA LOS QUE SE QUIEREN IR</p><h2 id="travelers-title" data-en="Everything that turns a trip<br>into <span class='teal-text'>a trip to remember.</span>">Todo lo que hace<br>que un viaje sea <span class="teal-text">un viajazo.</span></h2></div><p data-en="A getaway with friends, a family holiday, or that return to Venezuela you have been picturing for a while. There are many ways to travel. They all fit here.">Una escapada con amigos, vacaciones en familia o ese regreso a Venezuela que llevas tiempo imaginando. Hay muchas formas de viajar. Aquí caben todas.</p></div>
-      <div class="services">
-        <article class="service reveal"><div class="service-icon"><svg class="icon"><use href="#i-bed"/></svg></div><span class="service-number">01</span><h3 data-en="Stay somewhere you like.">Quédate a gusto.</h3><p data-en="A hotel to switch off. An apartment to feel at home. Find the space that fits your trip and the people coming with you.">Un hotel para desconectar. Un apartamento para sentirte en casa. Encuentra el espacio que encaje con tu viaje y con quienes te acompañan.</p><div class="service-tags" data-en="Hotels and inns <span>·</span> Apartments">Hoteles y posadas <span>·</span> Apartamentos</div></article>
-        <article class="service reveal"><div class="service-icon"><svg class="icon"><use href="#i-plane"/></svg></div><span class="service-number">02</span><h3 data-en="Connect the journey.">Conecta el camino.</h3><p data-en="Getting there and getting around once you arrive is part of the plan too. Connect every leg, by land, air or sea.">Llegar al destino y moverte dentro de él también es parte del plan. Conecta cada trayecto, por tierra, aire o mar.</p><div class="service-tags" data-en="Flights <span>·</span> Cars <span>·</span> Transfers<br>Boats and ferries">Vuelos <span>·</span> Carros <span>·</span> Traslados<br>Lanchas y ferries</div></article>
-        <article class="service reveal"><div class="service-icon"><svg class="icon"><use href="#i-compass"/></svg></div><span class="service-number">03</span><h3 data-en="Come back with stories.">Vuelve con historias.</h3><p data-en="Step off the usual route. Discover activities, tours and experiences led by the people who know each place and make it special.">Sal de la ruta de siempre. Descubre actividades, tours y experiencias de la mano de quienes conocen y hacen especial cada lugar.</p><div class="service-tags" data-en="Activities <span>·</span> Tours <span>·</span> Experiences">Actividades <span>·</span> Tours <span>·</span> Experiencias</div></article>
-        <article class="service reveal"><div class="service-icon"><svg class="icon"><use href="#i-food"/></svg></div><span class="service-number">04</span><h3 data-en="Taste the destination.">Prueba el destino.</h3><p data-en="Food tells the story of a trip too. Make room in your itinerary for that table, that local flavor, and the long conversation after the meal.">La comida también cuenta el viaje. Dale un lugar en tu itinerario a esa mesa, ese sabor local y esa sobremesa que se alarga.</p><div class="service-tags" data-en="Restaurants <span>·</span> Local cuisine">Restaurantes <span>·</span> Gastronomía local</div></article>
+
+      <div class="screen sheet" data-s="1">
+        <div class="grab"></div>
+        <div class="scr-h"><b data-en="What is Luis joining?">¿En qué participa Luis?</b><small data-en="What he skips is split among the others">Lo que no use se reparte entre los demás</small></div>
+        <div class="split-top"><span class="ava c">L</span><b data-en="Luis pays">Luis paga</b><span class="amt tabnum">USD <span id="luis">0</span></span></div>
+        <div id="luisItems">
+          <div class="row"><div class="t"><b data-en="Round-trip flights">Vuelos ida y vuelta</b><small>USD 160</small></div><button class="sw" role="switch" aria-checked="true" data-v="160" aria-label="Vuelos ida y vuelta" data-en-aria="Round-trip flights"></button></div>
+          <div class="row"><div class="t"><b data-en="Airport transfer">Traslado del aeropuerto</b><small>USD 15</small></div><button class="sw" role="switch" aria-checked="true" data-v="15" aria-label="Traslado del aeropuerto" data-en-aria="Airport transfer"></button></div>
+          <div class="row"><div class="t"><b data-en="Posada · night of the 17th">Posada · noche del 17</b><small>USD 54</small></div><button class="sw" role="switch" aria-checked="true" data-v="54" aria-label="Posada, noche del 17" data-en-aria="Posada, night of the 17th"></button></div>
+          <div class="row"><div class="t"><b data-en="Posada · night of the 18th">Posada · noche del 18</b><small>USD 54</small></div><button class="sw" role="switch" aria-checked="true" data-v="54" aria-label="Posada, noche del 18" data-en-aria="Posada, night of the 18th"></button></div>
+          <div class="row"><div class="t"><b data-en="Boat to the cays">Lancha a los cayos</b><small>USD 40</small></div><button class="sw" role="switch" aria-checked="false" data-v="40" aria-label="Lancha a los cayos" data-en-aria="Boat to the cays"></button></div>
+          <div class="row"><div class="t"><b data-en="Driver for the day">Chofer por día</b><small>USD 22.50</small></div><button class="sw" role="switch" aria-checked="true" data-v="22.5" aria-label="Chofer por día" data-en-aria="Driver for the day"></button></div>
+        </div>
       </div>
-    </section>
-    <section class="how-section" id="como-funciona" aria-labelledby="how-title"><div class="container how-grid">
-      <div class="how-intro reveal"><p class="eyebrow" data-en="02 / YOUR WAY">02 / A TU MANERA</p><h2 id="how-title" data-en="You bring the spark.<br><span class='teal-text'>The plan takes shape.</span>">Tú pones las ganas.<br><span class="teal-text">El plan toma forma.</span></h2><p data-en="We are building an experience for organizing the whole trip, or for finding just the piece you are missing.">Estamos construyendo una experiencia para organizar el viaje completo o encontrar solo la pieza que te falta.</p><div class="trip-tabs" role="tablist" aria-label="Formas de viajar con Lesgou" data-en-aria="Ways to travel with Lesgou"><button type="button" role="tab" id="tab-trip" aria-selected="true" aria-controls="panel-trip" tabindex="0" data-en="Build my trip">Armar mi viaje</button><button type="button" role="tab" id="tab-single" aria-selected="false" aria-controls="panel-single" tabindex="-1" data-en="Just one thing">Algo puntual</button></div><div class="how-footnote" data-en="<svg class='icon'><use href='#i-route'/></svg>One destination or several. The trip is still yours."><svg class="icon"><use href="#i-route"/></svg>Un destino o varios. El viaje sigue siendo tuyo.</div></div>
-      <div class="how-panels reveal">
-        <div id="panel-trip" class="steps" role="tabpanel" aria-labelledby="tab-trip" tabindex="0"><article class="step"><span class="step-number">01</span><div><h3 data-en="Start with where you want to go.">Empieza por dónde quieres ir.</h3><p data-en="Choose your destinations, the order, how many nights you want to stay and who is coming with you.">Elige tus destinos, el orden, cuántas noches quieres quedarte y quiénes van contigo.</p></div></article><article class="step"><span class="step-number">02</span><div><h3 data-en="Connect every part of the trip.">Conecta cada parte del viaje.</h3><p data-en="Set the dates and bring together the lodging, the legs between destinations and the transport you need.">Define las fechas y reúne el hospedaje, los trayectos entre destinos y la movilidad que necesitas.</p></div></article><article class="step"><span class="step-number">03</span><div><h3 data-en="Bring your days to life.">Dale vida a tus días.</h3><p data-en="Add activities, restaurants and open time. An itinerary with room for both plans and improvisation.">Añade actividades, restaurantes y espacios libres. Un itinerario con lugar para los planes y la improvisación.</p></div></article></div>
-        <div id="panel-single" class="steps" role="tabpanel" aria-labelledby="tab-single" tabindex="0" hidden><article class="step"><span class="step-number">01</span><div><h3 data-en="Go straight to what you need.">Ve directo a lo que necesitas.</h3><p data-en="Trip already under way? Find the lodging, transfer, activity or restaurant you are still missing.">¿Ya tienes el viaje encaminado? Busca el hospedaje, traslado, actividad o restaurante que te falta.</p></div></article><article class="step"><span class="step-number">02</span><div><h3 data-en="Find what fits you.">Encuentra lo que encaja contigo.</h3><p data-en="Check the service details, the dates, what is included and the conditions before you decide.">Revisa la información del servicio, las fechas, lo que incluye y las condiciones antes de decidir.</p></div></article><article class="step"><span class="step-number">03</span><div><h3 data-en="Complete your plan.">Completa tu plan.</h3><p data-en="Booking a single service will let you settle that part of the trip without building a full itinerary.">La reserva por servicio te permitirá resolver esa parte del viaje sin tener que crear un itinerario completo.</p></div></article></div>
+
+      <div class="screen sheet" data-s="2">
+        <div class="grab"></div>
+        <div class="scr-h"><b data-en="Who is it for?">¿Para quién es?</b><small data-en="Caracas – Porlamar flights · round trip">Vuelos Caracas – Porlamar · ida y vuelta</small></div>
+        <div class="forwho">
+          <div class="seg" id="forSeg"><span class="pill"></span><button type="button" data-v="me" aria-pressed="false" data-en="For me">Para mí</button><button type="button" data-v="other" aria-pressed="true" data-en="For someone else">Para otra persona</button></div>
+          <div class="person" id="sofi"><span class="ava e">S</span><div class="t" style="flex:1"><b>Sofía</b><small style="display:block;color:var(--muted)" data-en="16 years old · gets it on WhatsApp">16 años · le llega por WhatsApp</small></div><button class="fx fx-ghost fx-sm" type="button" data-en="Change">Cambiar</button></div>
+          <div class="note-minor" id="sofiNote" data-en="Sofía is a minor. Who is she travelling with? With her parents · With another adult">Sofía es menor de edad. ¿Con quién viaja? Con sus padres · Con otro adulto</div>
+        </div>
       </div>
-    </div></section>
-    <section class="destinations section container" aria-labelledby="destinations-title">
-      <div class="section-heading reveal"><div><p class="eyebrow" data-en="NO SHORTAGE OF REASONS TO GO">SOBRAN RAZONES PARA SALIR</p><h2 id="destinations-title" data-en="Morrocoy and Margarita.<br><span class='teal-text'>Two reasons to go.</span>">Morrocoy y Margarita.<br><span class="teal-text">Dos razones para ir.</span></h2></div><p data-en="Cays to switch off. Beaches worth returning to. Two ways to live the Venezuelan Caribbean. Which one is your next getaway?">Cayos para desconectar. Playas para volver. Dos formas de vivir el Caribe venezolano. ¿Cuál será tu próxima escapada?</p></div>
-      <div class="destination-grid">
-        <article class="destination destination-morrocoy reveal"><img src="/assets/morrocoy.webp" alt="Palmeras sobre la arena blanca y aguas turquesas de Cayo Sombrero, Parque Nacional Morrocoy." data-en-alt="Palm trees over the white sand and turquoise water of Cayo Sombrero, Morrocoy National Park." width="1920" height="1306" loading="lazy"><div class="destination-shade"></div><span class="destination-tag" data-en="FROM CAY TO CAY">DE CAYO EN CAYO</span><div class="destination-caption"><span data-en="Falcón Coast">Costa de Falcón</span><h3>Morrocoy</h3><p data-en="Cays, clear water and no rush.">Cayos, agua clara y cero apuro.</p></div></article>
-        <article class="destination destination-margarita reveal"><img src="/assets/margarita.webp" alt="Playa El Agua en Isla de Margarita, con palmeras, arena blanca y mar azul." data-en-alt="Playa El Agua on Isla de Margarita, with palm trees, white sand and blue sea." width="1600" height="1067" loading="lazy"><div class="destination-shade"></div><span class="destination-tag" data-en="LIFE IN ISLAND MODE">LA VIDA EN MODO ISLA</span><div class="destination-caption"><span>Nueva Esparta</span><h3>Margarita</h3><p data-en="Your next plan has a taste of the island.">Tu próximo plan tiene sabor a isla.</p></div></article>
-      </div><p class="destination-note" data-en="Two destinations to start with. A whole country to discover.">Dos destinos para empezar. Un país entero por descubrir.</p>
-    </section>
-    <section class="providers" id="proveedores" aria-labelledby="providers-title"><div class="container provider-grid">
-      <div class="provider-intro reveal"><p class="eyebrow" data-en="03 / FOR THOSE WHO MAKE THE TRIP POSSIBLE">03 / PARA LOS QUE HACEN POSIBLE EL VIAJE</p><h2 id="providers-title" data-en="Your service could be <br>the next <span>great plan.</span>">Tu servicio puede ser <br>el próximo <span>gran plan.</span></h2><p data-en="Behind a good trip there are people who host, drive, guide and share. Lesgou is connecting that talent with the people who want to experience Venezuela.">Detrás de un buen viaje hay personas que reciben, llevan, guían y comparten. Lesgou está conectando ese talento con quienes quieren vivir Venezuela.</p><p class="provider-small" data-en="From your first apartment to a hotel, a fleet of vehicles or a local experience: your service has a place in the trip.">Desde tu primer apartamento hasta un hotel, una flota de vehículos o una experiencia local: tu servicio tiene un lugar en el viaje.</p><a class="button button-accent" href="#sumate" data-en="See how to join <svg class='icon'><use href='#i-arrow'/></svg>">Conoce cómo formar parte <svg class="icon"><use href="#i-arrow"/></svg></a><div class="provider-model"><svg class="icon"><use href="#i-check"/></svg><div><strong data-en="A commission-based model.">Un modelo por comisión.</strong><p data-en="Commercial terms will be defined by service type when you join.">Las condiciones comerciales se definirán según el tipo de servicio al incorporarte.</p></div></div></div>
-      <div class="provider-types reveal"><div class="provider-types-heading"><h3 data-en="What do you have to offer?">¿Qué tienes para ofrecer?</h3><span data-en="FIND YOUR PLACE">ENCUENTRA TU LUGAR</span></div>
-        <details class="provider-type" open><summary><svg class="icon"><use href="#i-bed"/></svg><span data-en="Hotels and inns">Hoteles y posadas</span><svg class="icon plus"><use href="#i-plus"/></svg></summary><div class="provider-detail"><p data-en="Make your lodging part of the plan from the start. Show your rooms, facilities, location and what makes staying with you special.">Haz que tu hospedaje forme parte del plan desde el principio. Presenta tus habitaciones, instalaciones, ubicación y lo que hace especial quedarse contigo.</p></div></details>
-        <details class="provider-type"><summary><svg class="icon"><use href="#i-home"/></svg><span data-en="Apartments and holiday homes">Apartamentos y casas vacacionales</span><svg class="icon plus"><use href="#i-plus"/></svg></summary><div class="provider-detail"><p data-en="Connect your space with travelers looking for comfort and flexibility. Describe its capacity, amenities, house rules and stay conditions.">Conecta tu espacio con viajeros que buscan comodidad y flexibilidad. Describe su capacidad, servicios, reglas de la casa y condiciones de estancia.</p></div></details>
-        <details class="provider-type"><summary><svg class="icon"><use href="#i-compass"/></svg><span data-en="Activities, tours and experiences">Actividades, tours y experiencias</span><svg class="icon plus"><use href="#i-plus"/></svg></summary><div class="provider-detail"><p data-en="A hike, an adventure on the water or a cultural tour. Tell visitors what they will experience, how long it lasts, where you meet and what is included.">Una caminata, una aventura en el agua o un recorrido cultural. Cuenta qué vivirán tus visitantes, la duración, el punto de encuentro y qué está incluido.</p></div></details>
-        <details class="provider-type"><summary><svg class="icon"><use href="#i-car"/></svg><span data-en="Car rental and transfers">Alquiler de carros y traslados</span><svg class="icon plus"><use href="#i-plus"/></svg></summary><div class="provider-detail"><p data-en="Help connect the airport, the lodging and the next destination. Present your vehicles or routes, capacity, service areas and booking requirements.">Ayuda a conectar el aeropuerto, el hospedaje y el próximo destino. Presenta tus vehículos o rutas, capacidad, zonas de servicio y requisitos de contratación.</p></div></details>
-        <details class="provider-type"><summary><svg class="icon"><use href="#i-boat"/></svg><span data-en="Boats and ferries">Lanchas y ferries</span><svg class="icon plus"><use href="#i-plus"/></svg></summary><div class="provider-detail"><p data-en="Bring travelers closer to their next island or coast. Detail the ports or departure points, routes, schedules, capacity and sea transfer conditions.">Acerca a los viajeros a su próxima isla o costa. Detalla los puertos o puntos de salida, rutas, horarios, capacidad y condiciones del traslado marítimo.</p></div></details>
-        <details class="provider-type"><summary><svg class="icon"><use href="#i-plane"/></svg><span data-en="Flights and air connections">Vuelos y conexiones aéreas</span><svg class="icon plus"><use href="#i-plus"/></svg></summary><div class="provider-detail"><p data-en="Fit the air connection into the complete trip. Onboarding operators and services will be subject to the corresponding commercial and operational validation.">Integra la conexión aérea dentro del viaje completo. La incorporación de operadores y servicios estará sujeta a la validación comercial y operativa correspondiente.</p></div></details>
-        <details class="provider-type"><summary><svg class="icon"><use href="#i-food"/></svg><span data-en="Restaurants">Restaurantes</span><svg class="icon plus"><use href="#i-plus"/></svg></summary><div class="provider-detail"><p data-en="Make your table part of the itinerary. Share your food offering, location, opening hours and the terms for taking bookings from travelers.">Haz que tu mesa sea parte del itinerario. Comparte tu propuesta gastronómica, ubicación, horarios y condiciones para recibir reservas de viajeros.</p></div></details>
+
+      <div class="screen sheet" data-s="3">
+        <div class="grab"></div>
+        <div class="notif"><span class="ico"><svg class="icon"><use href="#i-bell"/></svg></span><div><b data-en="The ferry departure changed">Cambió la salida del ferry</b><small data-en="It leaves 30 minutes earlier. Nobody has paid yet, so nobody loses anything.">Sale 30 min antes. Nadie ha pagado todavía, así que nadie pierde nada.</small></div></div>
+        <div class="row"><span class="ico"><svg class="icon"><use href="#i-boat"/></svg></span><div class="t"><b>Ferry Puerto La Cruz – Margarita</b><small><s>10:30 a. m.</s> → 10:00 a. m.</small></div><span class="chip" data-en="Review">Revisar</span></div>
+        <div class="row"><span class="ico"><svg class="icon"><use href="#i-users"/></svg></span><div class="t"><b data-en="4 of 4 have seen it">4 de 4 ya lo vieron</b><small data-en="Ana confirmed 2 min ago">Ana confirmó hace 2 min</small></div><div class="avas"><span class="ava a">D</span><span class="ava b">A</span><span class="ava c">L</span><span class="ava d">C</span></div></div>
       </div>
-    </div><div class="container provider-benefits"><div><span>01</span><p data-en="<strong>More context for choosing you.</strong> Your service, inside a trip."><strong>Más contexto para elegirte.</strong> Tu servicio, dentro de un viaje.</p></div><div><span>02</span><p data-en="<strong>Your offering, well presented.</strong> Clear information for the traveler."><strong>Tu propuesta, bien presentada.</strong> Información clara para el viajero.</p></div><div><span>03</span><p data-en="<strong>Tourism that connects.</strong> More opportunities between services."><strong>Turismo que se conecta.</strong> Más oportunidades entre servicios.</p></div></div></section>
-    <section class="join section container" id="sumate" aria-labelledby="join-title">
-      <div class="section-heading reveal"><div><p class="eyebrow" data-en="THE NEXT STEP FOR YOUR BUSINESS">EL PRÓXIMO PASO PARA TU NEGOCIO</p><h2 id="join-title" data-en="Get found.<br>Get <span class='teal-text'>chosen.</span>">Que te encuentren.<br>Que te <span class="teal-text">elijan.</span></h2></div><p data-en="We are putting together our network of travel services. Here is what you can start organizing for joining Lesgou later on.">Estamos preparando nuestra red de servicios turísticos. Esto es lo que puedes ir organizando para una futura incorporación a Lesgou.</p></div>
-      <div class="join-steps"><article class="reveal"><span data-en="01 / YOUR SERVICE">01 / TU SERVICIO</span><h3 data-en="Show us what you do.">Muéstranos lo que haces.</h3><p data-en="Prepare a description of your business, where you operate, contact details and photos that represent what you offer.">Prepara una descripción de tu negocio, dónde operas, datos de contacto y fotografías que representen lo que ofreces.</p></article><article class="reveal"><span data-en="02 / THE DETAILS">02 / LA INFORMACIÓN</span><h3 data-en="Put the details on the table.">Pon los detalles sobre la mesa.</h3><p data-en="Define capacity, prices, schedules, availability, what the service includes and your booking and cancellation terms.">Define capacidad, precios, horarios, disponibilidad, qué incluye el servicio y tus condiciones de reserva y cancelación.</p></article><article class="reveal"><span data-en="03 / ONBOARDING">03 / LA INCORPORACIÓN</span><h3 data-en="Review the terms.">Conoce las condiciones.</h3><p data-en="Service validation and the commercial agreement will be part of the onboarding process once it is available.">La validación del servicio y el acuerdo comercial formarán parte del proceso de incorporación cuando esté disponible.</p></article></div>
-      <div class="join-note"><svg class="icon"><use href="#i-compass"/></svg><p data-en="<strong>We are preparing the launch.</strong> Booking and provider onboarding will be announced once they are available."><strong>Estamos preparando el lanzamiento.</strong> La apertura de reservas y la incorporación de proveedores se anunciarán cuando estén disponibles.</p></div>
-    </section>
-    <section class="faq-section" id="preguntas" aria-labelledby="faq-title"><div class="container faq-grid"><div class="reveal"><p class="eyebrow" data-en="BEFORE YOU PACK">ANTES DE HACER LAS MALETAS</p><h2 id="faq-title" data-en="You are probably <br>wondering...">Seguro te <br>preguntas...</h2><p data-en="The essentials about Lesgou, traveling with us, or joining as a provider.">Lo esencial para conocer Lesgou, viajar con nosotros o formar parte como proveedor.</p></div><div class="faqs reveal">
-      <details><summary data-en="What is Lesgou?<svg class='icon plus'><use href='#i-plus'/></svg>">¿Qué es Lesgou?<svg class="icon plus"><use href="#i-plus"/></svg></summary><p data-en="Lesgou is a platform in development that connects lodging, flights, transportation, activities and restaurants into a single travel experience across Venezuela. It exists to make organizing each part of the plan simpler.">Lesgou es una plataforma en desarrollo para conectar hospedaje, vuelos, transporte, actividades y restaurantes en una misma experiencia de viaje por Venezuela. Nace para que organizar cada parte del plan sea más sencillo.</p></details>
-      <details><summary data-en="Do I have to organize a whole trip?<svg class='icon plus'><use href='#i-plus'/></svg>">¿Tengo que organizar un viaje completo?<svg class="icon plus"><use href="#i-plus"/></svg></summary><p data-en="No. Lesgou supports two ways of using it: building a trip with one or several destinations, or booking a single service. You might need anything from a full holiday to one activity.">No. Lesgou contempla dos formas de uso: construir un viaje con uno o varios destinos, o reservar un servicio puntual. Puedes necesitar desde unas vacaciones completas hasta una sola actividad.</p></details>
-      <details><summary data-en="Can I book through Lesgou yet?<svg class='icon plus'><use href='#i-plus'/></svg>">¿Ya puedo reservar a través de Lesgou?<svg class="icon plus"><use href="#i-plus"/></svg></summary><p data-en="We are preparing the launch. This page presents the experience we are building; bookings are not enabled here yet. We will announce when they open.">Estamos preparando el lanzamiento. Esta página presenta la experiencia que estamos construyendo; las reservas todavía no están habilitadas aquí. Anunciaremos su apertura cuando estén disponibles.</p></details>
-      <details><summary data-en="Can I offer my apartment or an activity?<svg class='icon plus'><use href='#i-plus'/></svg>">¿Puedo ofrecer mi apartamento o una actividad?<svg class="icon plus"><use href="#i-plus"/></svg></summary><p data-en="Yes, those services are part of what Lesgou covers, along with hotels, inns, car rental, transfers, boats, ferries, flights and restaurants. Joining will be subject to service review and the applicable terms.">Sí, esos servicios forman parte del alcance de Lesgou, junto con hoteles, posadas, alquiler de carros, traslados, lanchas, ferries, vuelos y restaurantes. La incorporación estará sujeta a la revisión del servicio y las condiciones aplicables.</p></details>
-      <details><summary data-en="How does the provider model work?<svg class='icon plus'><use href='#i-plus'/></svg>">¿Cómo funciona el modelo para proveedores?<svg class="icon plus"><use href="#i-plus"/></svg></summary><p data-en="The Lesgou model is based on commissions for the services booked. The rate, the terms and how each category works will be explained during onboarding, before any participation is agreed.">El modelo de Lesgou se basa en comisiones por los servicios reservados. La tarifa, las condiciones y la operación de cada categoría se explicarán durante el proceso de incorporación, antes de acordar la participación.</p></details>
-      <details><summary data-en="Which destinations and services will be available?<svg class='icon plus'><use href='#i-plus'/></svg>">¿Qué destinos y servicios estarán disponibles?<svg class="icon plus"><use href="#i-plus"/></svg></summary><p data-en="The initial focus is Venezuela. The specific offering will depend on the providers who join and their availability. The photos on this page show destinations for inspiration and do not represent inventory available to book.">El enfoque inicial es Venezuela. La oferta concreta dependerá de los proveedores incorporados y su disponibilidad. Las fotografías de esta página muestran destinos para inspirarte y no representan inventario disponible para reservar.</p></details>
-    </div></div></section>
-    <section class="closing container" aria-labelledby="closing-title"><div class="closing-inner reveal"><p class="eyebrow" data-en="MADE HERE. MADE TO LIVE IT ALL.">HECHO AQUÍ. PARA VIVIRLO TODO.</p><h2 id="closing-title" data-en="To the next “what if we just go?” <br><span>answer Lesgou.</span>">Al próximo ¿y si nos vamos? <br><span>respóndele Lesgou.</span></h2><p data-en="A country to discover. Many people who make it possible. <br>A new way to connect the trip.">Un país por descubrir. Muchas personas que lo hacen posible. <br>Una nueva forma de conectar el viaje.</p><div class="closing-actions"><a class="button button-navy" href="#viajeros" data-en="I want to see the experience <svg class='icon'><use href='#i-arrow'/></svg>">Quiero conocer la experiencia <svg class="icon"><use href="#i-arrow"/></svg></a><a class="closing-provider" href="#proveedores" data-en="I run a travel service <svg class='icon'><use href='#i-up-right'/></svg>">Tengo un servicio turístico <svg class="icon"><use href="#i-up-right"/></svg></a></div><span class="closing-soon" data-en="COMING SOON TO VENEZUELA">PRÓXIMAMENTE EN VENEZUELA</span></div></section>
-  </main>
-  <footer class="footer"><div class="container"><div class="footer-main"><div><a class="brand footer-brand" href="#inicio" aria-label="Lesgou, volver al inicio" data-en-aria="Lesgou, back to top"><img src="/assets/lesgou-logo.png" alt="Lesgou" width="680" height="200" loading="lazy"></a><p data-en="Your whole trip, connected.">Todo tu viaje, conectado.</p></div><nav aria-label="Navegación de pie de página" data-en-aria="Footer navigation"><a href="#viajeros" data-en="For travelers">Para viajeros</a><a href="#proveedores" data-en="For providers">Para proveedores</a><a href="#preguntas" data-en="Frequently asked questions">Preguntas frecuentes</a></nav><a class="back-top" href="#inicio" data-en="Back to top <svg class='icon'><use href='#i-arrow'/></svg>">Volver arriba <svg class="icon"><use href="#i-arrow"/></svg></a></div><div class="footer-bottom"><span>© <span id="year">2026</span> Lesgou.</span><span data-en="Made by people who want to go.">Hecho con ganas de ir.</span><details class="photo-credits"><summary data-en="Photo credits">Créditos de fotografía</summary><div id="photo-credits-content"><p>Morrocoy (Cayo Sombrero): <a href="https://commons.wikimedia.org/wiki/File:Cayo_Sombrero.JPG" target="_blank" rel="noopener noreferrer">AndreaC11</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>.</p><p>Margarita (Playa El Agua): <a href="https://commons.wikimedia.org/wiki/File:Dia_Soleado_en_Playa_el_Agua.jpg" target="_blank" rel="noopener noreferrer">Juan Pablo Jaimes (Astroberto)</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>.</p><p data-en="Photos resized, converted to WebP and cropped for this page. They keep their respective licenses.">Fotografías redimensionadas, convertidas a WebP y encuadradas para esta página. Conservan sus respectivas licencias.</p></div></details></div></div></footer>
+
+      <div class="screen sheet" data-s="4" id="payScr">
+        <div class="grab"></div>
+        <svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><circle class="t" cx="50" cy="50" r="44"/><circle class="d" cx="50" cy="50" r="44"/><circle class="a" cx="50" cy="50" r="44"/><path class="k" d="M31 51 L45 64 L70 37"/></svg>
+        <div class="pay-done"><b data-en="Paid!">¡Pagado!</b><small style="display:block;color:var(--soft)" data-en="Your share of the trip is booked. The receipt is in the trip.">Tu parte del viaje quedó reservada. El comprobante está en el viaje.</small></div>
+        <div class="methods"><span class="chip muted">Pago móvil</span><span class="chip muted" data-en="Bank transfer">Transferencia</span><span class="chip muted" data-en="Card">Tarjeta</span><span class="chip muted" data-en="Bs at BCV rate">Bs a tasa BCV</span></div>
+        <div style="padding:0 20px 20px"><button class="fx fx-teal" type="button" id="payAgain" style="width:100%" data-en="Pay my share">Pagar mi parte</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="single" aria-labelledby="single-title">
+  <div class="wrap">
+    <h2 class="h-l rv" id="single-title" data-en="Only missing one thing?">¿Solo te falta una cosa?</h2>
+    <p class="lede rv" style="margin-top:16px" data-en="No need to build a whole trip. Book just what you need.">No hace falta armar un viaje. Reserva solo lo que necesitas.</p>
+    <ul class="single-row rv" role="list" style="list-style:none;padding:0">
+      <li class="fx fx-ghost"><svg class="icon"><use href="#i-bed"/></svg><span data-en="Lodging">Hospedaje</span></li>
+      <li class="fx fx-ghost"><svg class="icon"><use href="#i-plane"/></svg><span data-en="Flights">Vuelos</span></li>
+      <li class="fx fx-ghost"><svg class="icon"><use href="#i-car"/></svg><span data-en="Transfers">Traslados</span></li>
+      <li class="fx fx-ghost"><svg class="icon"><use href="#i-boat"/></svg><span data-en="Boats and ferries">Lanchas y ferry</span></li>
+      <li class="fx fx-ghost"><svg class="icon"><use href="#i-wave"/></svg><span data-en="Activities">Actividades</span></li>
+      <li class="fx fx-ghost"><svg class="icon"><use href="#i-food"/></svg><span data-en="Restaurants">Restaurantes</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="wrap dest" id="destinos" aria-label="Destinos" data-en-aria="Destinations">
+  <div class="place rv"><img src="/assets/morrocoy.webp" alt="Cayo Sombrero, Morrocoy." loading="lazy" width="1920" height="1306"><div><h3 class="mega">Morrocoy</h3><small data-en="Cays to switch off.">Cayos para desconectar.</small></div></div>
+  <div class="place rv"><img src="/assets/margarita.webp" alt="Playa El Agua, Margarita." loading="lazy" width="1600" height="1067" style="object-position:30% 50%"><div><h3 class="mega">Margarita</h3><small data-en="Beaches to come back to.">Playas para volver.</small></div></div>
+  <div class="place next rv"><b data-en="And what's next.">Y lo que viene.</b></div>
+</section>
+
+<section class="prov" id="proveedores" aria-labelledby="prov-title">
+  <div class="prov-bg"><img src="/assets/morrocoy.webp" alt="" loading="lazy" width="1920" height="1306"></div>
+  <div class="prov-grid">
+    <div class="rv">
+      <h2 class="h-l" id="prov-title" data-en="Your service,<br><span>on the next trip.</span>">Tu servicio,<br><span>en el próximo viaje.</span></h2>
+      <p class="lede" data-en="Behind every trip there's someone who hosts, drives, guides and cooks. If you offer a tourism service in Venezuela, Lesgou puts it in front of groups that are already planning their trip.">Detrás de cada viaje hay alguien que recibe, lleva, guía y cocina. Si ofreces un servicio turístico en Venezuela, Lesgou lo pone frente a grupos que ya están armando su viaje.</p>
+      <div class="prov-contact">
+        <a class="fx fx-teal" href="https://wa.me/584244500211" target="_blank" rel="noopener"><svg class="icon"><use href="#i-chat"/></svg><span><span data-en="Message us on WhatsApp">Escríbenos por WhatsApp</span><small>+58 424-4500211</small></span></a>
+        <a class="fx fx-ghost" href="mailto:diegosilva06092001@gmail.com"><svg class="icon"><use href="#i-mail"/></svg><span><span data-en="Send us an email">Escríbenos un correo</span><small>diegosilva06092001@gmail.com</small></span></a>
+      </div>
+      <p class="commission" data-en="Commission-based model. Terms are agreed according to your type of service.">Modelo por comisión. Las condiciones se acuerdan según tu tipo de servicio.</p>
+    </div>
+
+    <form class="pform sheet rv" id="pform" novalidate aria-labelledby="pf-title">
+      <div class="grab"></div>
+      <div class="pf-head"><b id="pf-title" data-en="Join Lesgou">Súmate a Lesgou</b><span class="example" data-en="2 MINUTES">2 MINUTOS</span></div>
+      <p class="pf-sub" data-en="What do you offer? Pick all that apply.">¿Qué ofreces? Elige todo lo que aplique.</p>
+      <div class="tiles" role="group" aria-labelledby="pf-title">
+        <label class="tile"><input type="checkbox" name="tipo" value="Hotel"><span><svg class="icon"><use href="#i-bed"/></svg>Hotel</span></label>
+        <label class="tile"><input type="checkbox" name="tipo" value="Posada"><span><svg class="icon"><use href="#i-home"/></svg>Posada</span></label>
+        <label class="tile"><input type="checkbox" name="tipo" value="Apartamento o casa"><span><svg class="icon"><use href="#i-key"/></svg><span data-en="Rental">Alquiler</span></span></label>
+        <label class="tile"><input type="checkbox" name="tipo" value="Actividad o tour"><span><svg class="icon"><use href="#i-wave"/></svg><span data-en="Activity">Actividad</span></span></label>
+        <label class="tile"><input type="checkbox" name="tipo" value="Gastronomía"><span><svg class="icon"><use href="#i-food"/></svg><span data-en="Food">Comida</span></span></label>
+        <label class="tile"><input type="checkbox" name="tipo" value="Chofer o traslados"><span><svg class="icon"><use href="#i-user"/></svg><span data-en="Driver">Chofer</span></span></label>
+        <label class="tile"><input type="checkbox" name="tipo" value="Alquiler de carros"><span><svg class="icon"><use href="#i-car"/></svg><span data-en="Cars">Carros</span></span></label>
+        <label class="tile"><input type="checkbox" name="tipo" value="Lancha o ferry"><span><svg class="icon"><use href="#i-boat"/></svg><span data-en="Boats">Lanchas</span></span></label>
+        <label class="tile"><input type="checkbox" name="tipo" value="Vuelos"><span><svg class="icon"><use href="#i-plane"/></svg><span data-en="Flights">Vuelos</span></span></label>
+        <label class="tile"><input type="checkbox" name="tipo" value="Otro"><span><svg class="icon"><use href="#i-plus"/></svg><span data-en="Other">Otro</span></span></label>
+      </div>
+      <div class="pstart"><button class="fx fx-teal" type="button" id="pnext"><span data-en="Continue">Continuar</span> <span class="knob"><svg class="icon"><use href="#i-down"/></svg></span></button></div>
+
+      <div class="pcol" id="pcol"><div id="pinner"><div class="pfields">
+        <div class="field-row" id="potherRow" hidden><span class="ico"><svg class="icon"><use href="#i-plus"/></svg></span><div class="fi"><label for="pOt" data-en="What else?">¿Qué otro servicio?</label><input id="pOt" placeholder="Ej: paseos en kayak" data-en-placeholder="E.g. kayak tours"></div></div>
+        <div class="field-row"><span class="ico"><svg class="icon"><use href="#i-home"/></svg></span><div class="fi"><label for="pBiz" data-en="Business name">Nombre del negocio</label><input id="pBiz" autocomplete="organization" placeholder="Ej: Posada Brisa" data-en-placeholder="E.g. Posada Brisa"></div></div>
+        <div class="field-row"><span class="ico"><svg class="icon"><use href="#i-user"/></svg></span><div class="fi"><label for="pName" data-en="Your name">Tu nombre</label><input id="pName" autocomplete="name"></div></div>
+        <div class="field-row"><span class="ico"><svg class="icon"><use href="#i-pin"/></svg></span><div class="fi"><label for="pLoc" data-en="Where do you operate?">¿Dónde operas?</label><input id="pLoc" placeholder="Ej: Chichiriviche, Falcón" data-en-placeholder="E.g. Chichiriviche, Falcón"></div></div>
+        <div class="field-row"><span class="ico"><svg class="icon"><use href="#i-mail"/></svg></span><div class="fi"><label for="pEm" data-en="Email">Correo</label><input id="pEm" type="email" autocomplete="email" placeholder="tucorreo@ejemplo.com" data-en-placeholder="you@example.com"></div></div>
+        <div class="field-row"><span class="ico"><svg class="icon"><use href="#i-phone"/></svg></span><div class="fi"><label for="pPh" data-en="Phone or WhatsApp">Teléfono o WhatsApp</label><div class="phone-in"><select id="pPp" aria-label="Código de país" data-en-aria="Country code"><option>+58</option><option>+57</option><option>+1</option><option>+34</option><option>+507</option><option>+56</option><option>+54</option></select><input id="pPh" type="tel" autocomplete="tel-national" placeholder="424 000 0000"></div></div></div>
+        <div class="field-row"><span class="ico"><svg class="icon"><use href="#i-at"/></svg></span><div class="fi"><label for="pWeb" data-en="Instagram or website (optional)">Instagram o web (opcional)</label><input id="pWeb" placeholder="@tunegocio" data-en-placeholder="@yourbusiness"></div></div>
+        <div class="field-row"><span class="ico"><svg class="icon"><use href="#i-note"/></svg></span><div class="fi"><label for="pMsg" data-en="Tell us more (optional)">Cuéntanos más (opcional)</label><textarea id="pMsg" rows="2" placeholder="Capacidad, temporadas, lo que te hace especial" data-en-placeholder="Capacity, seasons, what makes you special"></textarea></div></div>
+        <div class="via"><label id="via-l" data-en="How should we contact you?">¿Cómo prefieres que te contactemos?</label><div class="seg" id="pVia" role="group" aria-labelledby="via-l"><span class="pill"></span><button type="button" data-v="WhatsApp" aria-pressed="true">WhatsApp</button><button type="button" data-v="llamada" aria-pressed="false" data-en="Call">Llamada</button><button type="button" data-v="correo" aria-pressed="false" data-en="Email">Correo</button></div></div>
+        <div class="pform-foot">
+          <p class="perr" id="perr" role="alert"></p>
+          <button class="fx fx-teal" type="submit"><span data-en="Send">Enviar</span> <span class="knob"><svg class="icon"><use href="#i-arrow"/></svg></span></button>
+          <p class="plegal" data-en="We'll only use this to contact you about Lesgou.">Usaremos estos datos solo para contactarte sobre Lesgou.</p>
+        </div>
+      </div></div></div>
+
+      <div class="pdone" aria-live="polite">
+        <svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><circle class="t" cx="50" cy="50" r="44"/><circle class="d" cx="50" cy="50" r="44"/><circle class="a" cx="50" cy="50" r="44"/><path class="k" d="M31 51 L45 64 L70 37"/></svg>
+        <div class="okmsg"><b id="pOk"></b><p id="pOkT"></p><button class="fx fx-ghost fx-sm" type="button" id="pAgain" data-en="Send another service">Enviar otro servicio</button></div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="close" aria-labelledby="close-title">
+  <div class="wrap">
+    <h2 class="mega rv" id="close-title" data-en="Let the hard part<br><span class='teal'>be coming home.</span>">Que lo difícil<br><span class="teal">sea volver.</span></h2>
+    <div class="cta-row rv"><a class="fx fx-teal" data-waitlist="web-cierre" href="/lista-de-espera/?origen=web-cierre"><span data-en="Be first. Reserve your spot">Llega primero. Reserva tu lugar</span> <span class="knob"><svg class="icon"><use href="#i-arrow"/></svg></span></a></div>
+  </div>
+</section>
+</main>
+
+<footer class="wrap foot">
+  <span>Lesgou · <span data-en="Made in Venezuela">Hecho en Venezuela</span> · <span id="year">2026</span></span>
+  <span><span data-en="Photos">Fotos</span>: <a href="https://commons.wikimedia.org/wiki/File:Cayo_Sombrero.JPG" target="_blank" rel="noopener noreferrer">AndreaC11</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Dia_Soleado_en_Playa_el_Agua.jpg" target="_blank" rel="noopener noreferrer">Juan Pablo Jaimes</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a></span>
+</footer>
 </body>
 </html>

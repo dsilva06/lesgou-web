@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08141c">
+  <meta name="robots" content="noindex">
+  <title>Reserva tu lugar · Lesgou</title>
+  <meta name="description" content="Llega primero a Lesgou. Reserva tu lugar en la lista de espera.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2308141c'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-family='Arial,sans-serif' font-size='44' font-weight='bold' fill='%232fbfa6'%3EG%3C/text%3E%3C/svg%3E">
+  <script>
+    // Already on the list on this device: go straight to the site.
+    try { if (localStorage.getItem('lesgou-waitlist')) location.replace('/'); } catch (e) {}
+  </script>
+  <link rel="preload" as="font" href="/assets/manrope-variable.ttf" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .wl{min-height:100svh;display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,64px);align-items:center;padding:96px clamp(16px,4vw,56px) 48px;isolation:isolate}
+    .wl-bg{position:fixed;inset:0;z-index:-1}
+    .wl-bg img{width:100%;height:100%;object-fit:cover;object-position:55% 50%}
+    .wl-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,20,28,.94) 0%,rgba(8,20,28,.7) 50%,rgba(8,20,28,.4) 100%)}
+    .wl .mega{font-size:clamp(3.4rem,8.6vw,7.6rem)}
+    .wl .mega span{display:block}
+    .wl .lede{margin-top:24px}
+    .perks{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:10px;max-width:420px}
+    .perks li{display:flex;align-items:center;gap:12px;font-size:1rem;color:var(--soft)}
+    .perks b{color:var(--text)}
+    .perks .ico{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:rgba(47,191,166,.14);color:var(--teal);flex:none}
+    .card{position:relative;width:100%;max-width:460px;justify-self:end;overflow:hidden}
+    .card-head{padding:20px 20px 4px}
+    .card-head b{font-size:1.5rem;letter-spacing:-.025em}
+    .card-head p{margin:4px 0 12px;color:var(--muted);font-size:.9rem}
+    .fields{transition:opacity .35s,filter .35s,transform .35s}
+    .field-row{display:flex;align-items:center;gap:14px;padding:10px 18px;border-top:1px solid var(--line)}
+    .field-row .ico{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:rgba(47,191,166,.12);color:var(--teal);flex:none}
+    .field-row .fi{flex:1;min-width:0}
+    .field-row label{display:block;font-size:.75rem;font-weight:750;color:var(--muted)}
+    .field-row input,.field-row select{width:100%;border:0;background:none;padding:2px 0;font:inherit;font-size:1rem;font-weight:650;color:var(--text);outline:0}
+    .field-row input::placeholder{color:#6f878e;font-weight:500}
+    .field-row select{appearance:none;cursor:pointer}
+    .field-row select option{background:var(--sheet);color:var(--text)}
+    .field-row:focus-within{background:rgba(47,191,166,.06)}
+    .field-row:focus-within .ico{background:var(--teal);color:var(--teal-ink)}
+    .two{display:grid;grid-template-columns:1fr 1fr}
+    .two .field-row+.field-row{border-left:1px solid var(--line)}
+    .phone-in{display:flex;gap:8px;align-items:center}
+    .phone-in .pre{color:var(--teal-hi);font-weight:800;white-space:nowrap}
+    .ced{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--out)}
+    .ced.show{grid-template-rows:1fr}
+    .ced>div{overflow:hidden;min-height:0}
+    .ced select{width:auto;color:var(--teal-hi);font-weight:800}
+    .wfoot{padding:16px 18px 20px;border-top:1px solid var(--line)}
+    .wfoot .fx{width:100%}
+    .err{color:#ffb4a3;font-size:.88rem;margin:0 0 12px;font-weight:650}.err:empty{display:none}
+    .legal{font-size:.8rem;color:var(--muted);text-align:center;margin:12px 0 0}
+    .done{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;opacity:0;pointer-events:none;transition:opacity .25s}
+    .card.busy .fields{opacity:.3;filter:blur(2px);transform:scale(.98)}
+    .card.busy .done,.card.paid .done{opacity:1}
+    .card.paid .fields,.card.paid .card-head{visibility:hidden}
+    .done .msg{opacity:0;transform:translateY(8px);transition:opacity .4s .75s,transform .4s .75s}
+    .card.paid .done .msg{opacity:1;transform:none}
+    .card.busy .done .msg{display:none}
+    .done h2{font-size:1.8rem;letter-spacing:-.03em;margin:12px 0 6px}
+    .done p{color:var(--soft);margin:0}
+    .bar-go{width:150px;height:3px;border-radius:3px;background:var(--line-2);margin:18px auto 0;overflow:hidden}
+    .bar-go i{display:block;height:100%;width:0;background:var(--teal)}
+    .card.paid .bar-go i{transition:width 1.6s linear 1s;width:100%}
+    .credit{position:fixed;right:14px;bottom:10px;font-size:.75rem;color:var(--soft);opacity:.75}
+    .credit a{color:inherit}
+    @media (max-width:900px){
+      .wl{grid-template-columns:1fr;padding-top:88px;align-items:start}
+      .perks{display:none}
+      .card{justify-self:stretch;max-width:none}
+      .credit{position:static;display:block;text-align:center;padding:0 16px 20px}
+    }
+    @media (max-width:420px){.two{grid-template-columns:1fr}.two .field-row+.field-row{border-left:0}}
+  </style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM4 21c.6-4 3.8-6.5 8-6.5s7.4 2.5 8 6.5"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 6h18v12H3zM3 7l9 6 9-6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M7 3h10v18H7zM11 18h2"/></symbol>
+  <symbol id="i-id" viewBox="0 0 24 24"><path d="M3 5h18v14H3zM7 10a2 2 0 1 0 0-.01M5 16c.5-1.6 1.6-2.5 3-2.5s2.5.9 3 2.5M14 9h4M14 13h4"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3 5 14h6l-1 7 8-11h-6z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></symbol>
+</svg>
+
+<header class="bar">
+  <a class="wordmark" href="/" aria-label="Lesgou"><img src="/assets/lesgou-logo.png" alt="Lesgou" width="102" height="30"></a>
+  <button class="lang language-toggle" type="button" aria-pressed="false">EN</button>
+</header>
+
+<div class="wl-bg"><img src="/assets/morrocoy.webp" alt="" width="1920" height="1306"></div>
+<main class="wl">
+  <div>
+    <h1 class="mega" data-en="<span>Be first.</span><span class='teal'>Travel differently.</span>"><span>Llega primero.</span><span class="teal">Viaja distinto.</span></h1>
+    <p class="lede" data-en="Your whole trip around Venezuela, connected. Lodging, transfers, activities and restaurants. With your people, in one place.">Todo tu viaje por Venezuela, conectado. Hospedaje, traslados, actividades y restaurantes. Con tu gente, en un solo lugar.</p>
+    <ul class="perks">
+      <li><span class="ico"><svg class="icon"><use href="#i-bolt"/></svg></span><span data-en="<b>First in.</b> Before anyone else."><b>Primero en entrar.</b> Antes que nadie.</span></li>
+      <li><span class="ico"><svg class="icon"><use href="#i-check"/></svg></span><span data-en="<b>Your account, ready.</b> From day one."><b>Tu cuenta, lista.</b> Desde el día uno.</span></li>
+      <li><span class="ico"><svg class="icon"><use href="#i-star"/></svg></span><span data-en="<b>What's new, first.</b> Morrocoy, Margarita and what's next."><b>Lo nuevo, primero.</b> Morrocoy, Margarita y lo que viene.</span></li>
+    </ul>
+  </div>
+
+  <form class="card sheet" id="form" novalidate aria-labelledby="f-title">
+    <div class="grab"></div>
+    <div class="card-head"><b id="f-title" data-en="Your spot is waiting.">Tu lugar te espera.</b><p data-en="One minute. Five details. Done.">Un minuto. Cinco datos. Listo.</p></div>
+    <div class="fields">
+      <div class="field-row"><span class="ico"><svg class="icon"><use href="#i-pin"/></svg></span><div class="fi"><label for="country" data-en="Country">País</label>
+        <select id="country" autocomplete="country">
+          <option value="" data-en="Choose your country">Elige tu país</option>
+          <option value="VE" data-p="+58">Venezuela</option>
+          <option value="CO" data-p="+57">Colombia</option>
+          <option value="US" data-p="+1" data-en="United States">Estados Unidos</option>
+          <option value="ES" data-p="+34" data-en="Spain">España</option>
+          <option value="PA" data-p="+507" data-en="Panama">Panamá</option>
+          <option value="CL" data-p="+56">Chile</option>
+          <option value="AR" data-p="+54">Argentina</option>
+          <option value="PE" data-p="+51" data-en="Peru">Perú</option>
+          <option value="MX" data-p="+52" data-en="Mexico">México</option>
+          <option value="DO" data-p="+1" data-en="Dominican Republic">República Dominicana</option>
+          <option value="EC" data-p="+593">Ecuador</option>
+          <option value="IT" data-p="+39" data-en="Italy">Italia</option>
+          <option value="PT" data-p="+351">Portugal</option>
+          <option value="CA" data-p="+1" data-en="Canada">Canadá</option>
+          <option value="OT" data-p="+" data-en="Other">Otro</option>
+        </select></div></div>
+      <div class="two">
+        <div class="field-row"><span class="ico"><svg class="icon"><use href="#i-user"/></svg></span><div class="fi"><label for="fn" data-en="First name">Nombre</label><input id="fn" autocomplete="given-name"></div></div>
+        <div class="field-row"><div class="fi"><label for="ln" data-en="Last name">Apellido</label><input id="ln" autocomplete="family-name"></div></div>
+      </div>
+      <div class="field-row"><span class="ico"><svg class="icon"><use href="#i-mail"/></svg></span><div class="fi"><label for="em" data-en="Email">Correo</label><input id="em" type="email" autocomplete="email" placeholder="tucorreo@ejemplo.com" data-en-placeholder="you@example.com"></div></div>
+      <div class="field-row"><span class="ico"><svg class="icon"><use href="#i-phone"/></svg></span><div class="fi"><label for="ph" data-en="Phone">Teléfono</label><div class="phone-in"><span class="pre" id="pp">+</span><input id="ph" type="tel" autocomplete="tel-national" placeholder="412 000 0000"></div></div></div>
+      <div class="ced" id="ced"><div><div class="field-row"><span class="ico"><svg class="icon"><use href="#i-id"/></svg></span><div class="fi"><label for="ci" data-en="Cédula (ID)">Cédula</label><div class="phone-in"><select id="cit" aria-label="Tipo de cédula" data-en-aria="ID type"><option>V</option><option>E</option></select><input id="ci" inputmode="numeric" placeholder="12345678"></div></div></div></div></div>
+      <div class="wfoot">
+        <p class="err" id="err" role="alert"></p>
+        <button class="fx fx-teal" type="submit"><span data-en="Reserve my spot">Reservar mi lugar</span> <span class="knob"><svg class="icon"><use href="#i-arrow"/></svg></span></button>
+        <p class="legal" data-en="By joining you accept our privacy policy.">Al anotarte aceptas nuestra política de privacidad.</p>
+      </div>
+    </div>
+    <div class="done" aria-live="polite">
+      <svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><circle class="t" cx="50" cy="50" r="44"/><circle class="d" cx="50" cy="50" r="44"/><circle class="a" cx="50" cy="50" r="44"/><path class="k" d="M31 51 L45 64 L70 37"/></svg>
+      <div class="msg"><h2 id="okTitle"></h2><p data-en="Your spot is yours. Now, meet Lesgou.">Tu lugar es tuyo. Ahora, conoce Lesgou.</p><div class="bar-go"><i></i></div></div>
+    </div>
+  </form>
+</main>
+<p class="credit"><span data-en="Photo">Foto</span>: <a href="https://commons.wikimedia.org/wiki/File:Cayo_Sombrero.JPG" target="_blank" rel="noopener noreferrer">AndreaC11</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a></p>
+
+<script src="/config.js"></script>
+<script>
+(() => {
+  'use strict';
+  // Supabase settings come from /config.js (see supabase/schema.sql).
+  const supa = window.LESGOU_SUPABASE || {};
+  function saveSignup(row) {
+    if (!supa.url || !supa.anonKey) return Promise.reject(new Error('Supabase is not configured in /config.js'));
+    const headers = { apikey: supa.anonKey, 'Content-Type': 'application/json', Prefer: 'return=minimal' };
+    if (supa.anonKey.startsWith('eyJ')) headers.Authorization = `Bearer ${supa.anonKey}`; // legacy JWT anon key
+    return fetch(`${supa.url.replace(/\/$/, '')}/rest/v1/waitlist`, { method: 'POST', headers, body: JSON.stringify(row) })
+      // 409: this email is already on the list, which is the outcome the visitor wanted.
+      .then(r => { if (!r.ok && r.status !== 409) throw new Error(String(r.status)); });
+  }
+  const KEY = 'lesgou-waitlist';
+  document.documentElement.classList.add('js');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const origen = new URLSearchParams(location.search).get('origen') || 'directo';
+
+  const S = {
+    es: { toggle: 'EN', label: 'Cambiar idioma a inglés', title: 'Reserva tu lugar · Lesgou', fields: 'Completa todos los campos para reservar tu lugar.', email: 'Revisa tu correo, parece que le falta algo.', send: 'No pudimos guardar tu lugar. Inténtalo de nuevo.', ok: n => `Listo, ${n}.` },
+    en: { toggle: 'ES', label: 'Switch language to Spanish', title: 'Reserve your spot · Lesgou', fields: 'Fill in every field to reserve your spot.', email: 'Check your email, something seems to be missing.', send: "We couldn't save your spot. Please try again.", ok: n => `Done, ${n}.` }
+  };
+  let lang = 'es';
+  const orig = { h: new WeakMap(), a: new WeakMap(), p: new WeakMap() };
+  const sw = (el, m, attr, en, on) => { if (!m.has(el)) m.set(el, attr ? el.getAttribute(attr) : el.innerHTML); const v = on ? en : m.get(el); attr ? el.setAttribute(attr, v) : (el.innerHTML = v); };
+  function setLang(l) {
+    lang = l === 'en' ? 'en' : 'es'; const on = lang === 'en';
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-en]').forEach(el => sw(el, orig.h, null, el.dataset.en, on));
+    document.querySelectorAll('[data-en-aria]').forEach(el => sw(el, orig.a, 'aria-label', el.dataset.enAria, on));
+    document.querySelectorAll('[data-en-placeholder]').forEach(el => sw(el, orig.p, 'placeholder', el.dataset.enPlaceholder, on));
+    const tg = document.querySelector('.language-toggle'); tg.textContent = S[lang].toggle; tg.setAttribute('aria-label', S[lang].label); tg.setAttribute('aria-pressed', String(on));
+    document.title = S[lang].title;
+    try { localStorage.setItem('lesgou-language', lang); } catch (e) {}
+  }
+  document.querySelector('.language-toggle').addEventListener('click', () => setLang(lang === 'en' ? 'es' : 'en'));
+  let stored = null; try { stored = localStorage.getItem('lesgou-language'); } catch (e) {}
+  setLang(stored || 'es');
+
+  // fidget buttons
+  document.querySelectorAll('.fx').forEach(b => {
+    b.addEventListener('pointermove', e => { const r = b.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top; b.style.setProperty('--px', x + 'px'); b.style.setProperty('--py', y + 'px'); if (!reduce && e.pointerType === 'mouse') { b.style.setProperty('--mx', ((x / r.width) - .5) * 8 + 'px'); b.style.setProperty('--my', ((y / r.height) - .5) * 6 + 'px'); } });
+    b.addEventListener('pointerleave', () => { b.style.setProperty('--mx', '0px'); b.style.setProperty('--my', '0px'); });
+    b.addEventListener('pointerdown', () => { if (navigator.vibrate) navigator.vibrate(8); });
+  });
+
+  const form = document.getElementById('form'), country = document.getElementById('country');
+  country.addEventListener('change', () => {
+    const o = country.selectedOptions[0];
+    document.getElementById('pp').textContent = (o && o.dataset.p) || '+';
+    document.getElementById('ced').classList.toggle('show', country.value === 'VE');
+  });
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (form.classList.contains('busy') || form.classList.contains('paid')) return;
+    const v = id => document.getElementById(id).value.trim(), err = document.getElementById('err');
+    const ve = v('country') === 'VE';
+    if (!v('country') || !v('fn') || !v('ln') || !v('em') || !v('ph') || (ve && !v('ci'))) { err.textContent = S[lang].fields; return; }
+    if (!/^\S+@\S+\.\S+$/.test(v('em'))) { err.textContent = S[lang].email; return; }
+    err.textContent = '';
+    const data = { pais: v('country'), nombre: v('fn'), apellido: v('ln'), correo: v('em'), telefono: document.getElementById('pp').textContent + ' ' + v('ph'), cedula: ve ? v('cit') + '-' + v('ci') : '', origen, idioma: lang };
+    const sending = saveSignup({
+      country: data.pais, first_name: data.nombre, last_name: data.apellido, email: data.correo,
+      phone: data.telefono, cedula: data.cedula || null, source: origen.slice(0, 60), language: lang
+    });
+    form.classList.add('busy');
+    Promise.all([sending, new Promise(r => setTimeout(r, 1100))]).then(() => {
+      document.getElementById('okTitle').textContent = S[lang].ok(data.nombre);
+      form.classList.remove('busy'); form.classList.add('paid');
+      if (navigator.vibrate) navigator.vibrate(12);
+      try { localStorage.setItem(KEY, JSON.stringify({ fn: data.nombre, origen })); } catch (e) {}
+      setTimeout(() => { location.href = '/'; }, reduce ? 1200 : 2700);
+    }).catch(e => { console.error('[lesgou] waitlist:', e.message); form.classList.remove('busy'); err.textContent = S[lang].send; });
+  });
+})();
+</script>
+</body>
+</html>
