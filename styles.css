@@ -317,6 +317,54 @@ section{position:relative}
   .prov-bg::after{background:linear-gradient(180deg,var(--night) 0%,rgba(8,20,28,.82) 30%,rgba(8,20,28,.9) 100%)}
 }
 @media (max-width:820px){.nav{display:none}}
+/* phones: keep the immersive feel, tighten the rhythm */
+@media (max-width:600px){
+  /* first screen is the photo with the giant type, the bill follows */
+  .hero{display:block;padding:0 16px 24px}
+  .hero>div:not(.hero-bg){min-height:92svh;display:flex;flex-direction:column;justify-content:flex-end;padding:96px 0 36px}
+  .hero-bg{bottom:auto;height:100svh}
+  .hero-bg img{object-position:32% 50%}
+  .hero-bg::after{background:linear-gradient(180deg,rgba(8,20,28,.55) 0%,rgba(8,20,28,.12) 26%,rgba(8,20,28,.5) 58%,rgba(8,20,28,.94) 84%,var(--night) 100%)}
+  .hero .mega{font-size:clamp(3.4rem,16vw,4.6rem)}
+  .hero .lede{margin-top:18px;color:var(--text)}
+  .cta-row{display:grid;grid-template-columns:1fr;margin-top:26px}
+  .cta-row .fx{width:100%;min-height:58px}
+  .bill{margin-top:8px}
+
+  .chat-sec{padding:64px 0 24px}
+  .chat-grid{gap:36px}
+  .how{padding:0 0 32px}
+  .stp{padding:40px 0}
+  .invite .fx{white-space:nowrap;padding:0 12px}
+  .seg button{padding:10px 8px;white-space:nowrap;font-size:.86rem}
+
+  /* services: a compact two-column grid of tiles */
+  .single{padding:24px 0 56px}
+  .single-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:26px}
+  .single-row .fx{min-height:58px;padding:12px 14px;gap:10px;justify-content:flex-start;font-size:.95rem;border-radius:18px;text-align:left;line-height:1.15}
+  .single-row .fx .icon{width:22px;height:22px;flex:none}
+
+  /* destinations: a swipeable rail with the next card peeking */
+  .dest{display:flex;width:100%;gap:12px;padding:0 16px 8px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:16px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .dest::-webkit-scrollbar{display:none}
+  .place{flex:0 0 84%;min-height:min(500px,64svh);scroll-snap-align:start;padding:22px}
+  .place .mega{font-size:2.6rem}
+
+  .soon{padding:56px 0 64px}
+  .soon-head{margin-bottom:22px}
+  .soon-head .fx{width:100%}
+  .soon-grid{gap:10px}
+  .sealed{min-height:200px;padding:18px;gap:8px}
+  .sealed p{font-size:.92rem}
+
+  .prov{padding:72px 16px 64px}
+  .prov-bg::after{background:linear-gradient(180deg,var(--night) 0%,rgba(8,20,28,.62) 22%,rgba(8,20,28,.8) 70%,var(--night) 100%)}
+  .prov-contact{display:grid;grid-template-columns:1fr}
+  .prov-contact .fx{width:100%;justify-content:center}
+
+  .close{padding:88px 0 96px}
+  .close .mega{font-size:clamp(2.8rem,13vw,4rem)}
+}
 @media (max-width:480px){.tiles{grid-template-columns:repeat(3,1fr)}}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
