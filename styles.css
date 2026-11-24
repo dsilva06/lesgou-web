@@ -332,8 +332,6 @@ section{position:relative}
   /* the app screen of the step in view comes forward, the others rest */
   .stp .screen{transition:opacity .6s var(--out),transform .7s var(--spring)}
   .stp:not(.on) .screen{opacity:.4;transform:scale(.94)}
-  .stp:not(.on) .h-l,.stp:not(.on) p{opacity:.5;transition:opacity .5s var(--out)}
-  .stp.on .h-l,.stp.on p{transition:opacity .5s var(--out)}
 }
 /* phones: keep the immersive feel, tighten the rhythm */
 @media (max-width:600px){
