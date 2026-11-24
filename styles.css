@@ -242,13 +242,12 @@ section{position:relative}
 .pf-head{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;padding:16px 20px 20px;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .45s var(--spring)}
 .pf-head:active{transform:scale(.98)}
 .pf-head:focus-visible{outline:2px solid var(--teal-hi);outline-offset:-4px;border-radius:var(--r-l)}
-.pf-head .sw{display:block;pointer-events:none}
 .pf-ht b{display:block;font-size:1.25rem;letter-spacing:-.02em}
 .pf-ht small{display:block;margin-top:4px;color:var(--muted);font-size:.88rem}
-.pform.open .pf-head .sw{background:var(--teal)}
-.pform.open .pf-head .sw::after{transform:translateX(20px)}
-.pf-head:active .sw::after{width:32px}
-.pform.open .pf-head:active .sw::after{transform:translateX(14px)}
+.pf-chev{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;flex:none;background:rgba(47,191,166,.14);color:var(--teal-hi);transition:transform .55s var(--spring),background .25s,color .25s}
+.pf-chev .icon{width:22px;height:22px}
+.pf-head:hover .pf-chev{transform:translateY(2px)}
+.pform.open .pf-chev{transform:rotate(180deg);background:var(--teal);color:var(--teal-ink)}
 .pf-sub{padding:16px 20px 14px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem;margin:0}
 .tiles{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;padding:4px 16px 16px}
 .tile{position:relative;cursor:pointer;margin:0}
