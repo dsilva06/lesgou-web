@@ -99,8 +99,16 @@
       if (!reduce && e.pointerType === 'mouse') { b.style.setProperty('--mx', ((x / r.width) - .5) * 8 + 'px'); b.style.setProperty('--my', ((y / r.height) - .5) * 6 + 'px'); }
     });
     b.addEventListener('pointerleave', () => { b.style.setProperty('--mx', '0px'); b.style.setProperty('--my', '0px'); });
-    b.addEventListener('pointerdown', () => buzz(8));
+    // Touch has no hover: light the sheen where the finger lands and press the button.
+    b.addEventListener('pointerdown', e => {
+      const r = b.getBoundingClientRect();
+      b.style.setProperty('--px', e.clientX - r.left + 'px'); b.style.setProperty('--py', e.clientY - r.top + 'px');
+      b.classList.add('is-pressed'); buzz(8);
+    });
+    ['pointerup', 'pointercancel', 'pointerleave'].forEach(t => b.addEventListener(t, () => b.classList.remove('is-pressed')));
   });
+  // iOS Safari only applies :active styles when a touch listener exists.
+  document.addEventListener('touchstart', () => {}, { passive: true });
   document.addEventListener('click', e => {
     const s = e.target.closest('.sw'); if (!s) return;
     const on = s.getAttribute('aria-checked') !== 'true'; s.setAttribute('aria-checked', String(on)); buzz(6);

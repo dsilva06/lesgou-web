@@ -209,8 +209,14 @@
   document.querySelectorAll('.fx').forEach(b => {
     b.addEventListener('pointermove', e => { const r = b.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top; b.style.setProperty('--px', x + 'px'); b.style.setProperty('--py', y + 'px'); if (!reduce && e.pointerType === 'mouse') { b.style.setProperty('--mx', ((x / r.width) - .5) * 8 + 'px'); b.style.setProperty('--my', ((y / r.height) - .5) * 6 + 'px'); } });
     b.addEventListener('pointerleave', () => { b.style.setProperty('--mx', '0px'); b.style.setProperty('--my', '0px'); });
-    b.addEventListener('pointerdown', () => { if (navigator.vibrate) navigator.vibrate(8); });
+    b.addEventListener('pointerdown', e => {
+      const r = b.getBoundingClientRect();
+      b.style.setProperty('--px', e.clientX - r.left + 'px'); b.style.setProperty('--py', e.clientY - r.top + 'px');
+      b.classList.add('is-pressed'); if (navigator.vibrate) navigator.vibrate(8);
+    });
+    ['pointerup', 'pointercancel', 'pointerleave'].forEach(t => b.addEventListener(t, () => b.classList.remove('is-pressed')));
   });
+  document.addEventListener('touchstart', () => {}, { passive: true });
 
   const form = document.getElementById('form'), country = document.getElementById('country');
   const bar = document.querySelector('.bar');
