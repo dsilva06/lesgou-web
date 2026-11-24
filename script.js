@@ -211,14 +211,15 @@
   }
 
   /* ---------------- providers form ---------------- */
-  const pf = document.getElementById('pform'), pinner = document.getElementById('pinner');
+  const pf = document.getElementById('pform'), pinner = document.getElementById('pinner'), ptoggle = document.getElementById('ptoggle');
   let via = 'WhatsApp';
   function openForm(open) {
     pf.classList.toggle('open', open); pinner.inert = !open;
-    if (open) setTimeout(() => { dispatchEvent(new Event('resize')); document.getElementById(document.getElementById('potherRow').hidden ? 'pBiz' : 'pOt').focus({ preventScroll: true }); }, 450);
+    ptoggle.setAttribute('aria-expanded', String(open));
+    if (open) setTimeout(() => dispatchEvent(new Event('resize')), 450);
   }
   openForm(false);
-  document.getElementById('pnext').addEventListener('click', () => openForm(true));
+  ptoggle.addEventListener('click', () => { buzz(8); openForm(!pf.classList.contains('open')); });
   document.getElementById('pVia').addEventListener('change', e => { via = e.detail; });
   pf.addEventListener('change', e => {
     if (e.target.name === 'tipo') { buzz(6); document.getElementById('potherRow').hidden = !pf.querySelector('input[value="Otro"]').checked; }

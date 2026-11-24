@@ -20,6 +20,9 @@
 <body>
 <a class="skip-link" href="#contenido" data-en="Skip to content">Saltar al contenido</a>
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-mtn" viewBox="0 0 24 24"><path d="M2 20 9 8l4 6 3-4 6 10zM7.5 10.5 9 12l1.5-1.5"/></symbol>
+  <symbol id="i-falls" viewBox="0 0 24 24"><path d="M2 20 5 6h14l3 14M12 6v10M9.5 19c1.5-1.6 3.5-1.6 5 0"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><path d="M12 9.5a3 3 0 1 0 .01 0M12 3v2M5.6 5.6 7 7M18.4 5.6 17 7M3 12.5h2M19 12.5h2M2 20c3-3 6-3 10-1s7 2 10-1"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
   <symbol id="i-plane" viewBox="0 0 24 24"><path d="M10.5 13.5 4 11l1.5-1.5 7 .5 4-4c.8-.8 2.2-.8 3 0s.8 2.2 0 3l-4 4 .5 7L14.5 21 12 14.5l-2.5 2.5.5 2-1.5 1.5-1.5-3.5L3.5 15.5 5 14l2 .5z"/></symbol>
   <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 16V11l2-5h10l2 5v5M3 16h18v3h-3v-1H6v1H3zM7 13h.01M17 13h.01"/></symbol>
@@ -60,7 +63,7 @@
 <section class="hero" aria-labelledby="hero-title">
   <div class="hero-bg"><img src="/assets/margarita.webp" alt="Playa El Agua, isla de Margarita." data-en-alt="Playa El Agua, Margarita Island." width="1600" height="1067" fetchpriority="high"></div>
   <div>
-    <h1 class="mega" id="hero-title" data-en="<span>Margarita</span><span class='teal'>is waiting.</span>"><span>Margarita</span><span class="teal">los espera.</span></h1>
+    <h1 class="mega" id="hero-title" data-en="<span>Venezuela</span><span class='teal'>is waiting.</span>"><span>Venezuela</span><span class="teal">los espera.</span></h1>
     <p class="lede" data-en="The whole trip, with your people. Everyone picks what they want and pays their share from their own phone.">Todo el viaje, con tu gente. Cada quien elige lo suyo y paga su parte desde su teléfono.</p>
     <div class="cta-row">
       <a class="fx fx-teal" data-waitlist="web-inicio" href="/lista-de-espera/?origen=web-inicio"><span data-en="Reserve your spot">Reserva tu lugar</span> <span class="knob"><svg class="icon"><use href="#i-arrow"/></svg></span></a>
@@ -194,7 +197,23 @@
 <section class="wrap dest" id="destinos" aria-label="Destinos" data-en-aria="Destinations">
   <div class="place rv"><img src="/assets/morrocoy.webp" alt="Cayo Sombrero, Morrocoy." loading="lazy" width="1920" height="1306"><div><h3 class="mega">Morrocoy</h3><small data-en="Cays to switch off.">Cayos para desconectar.</small></div></div>
   <div class="place rv"><img src="/assets/margarita.webp" alt="Playa El Agua, Margarita." loading="lazy" width="1600" height="1067" style="object-position:30% 50%"><div><h3 class="mega">Margarita</h3><small data-en="Beaches to come back to.">Playas para volver.</small></div></div>
-  <div class="place next rv"><b data-en="And what's next.">Y lo que viene.</b></div>
+</section>
+
+<section class="wrap soon" aria-labelledby="soon-title">
+  <div class="soon-head rv">
+    <div>
+      <span class="chip soon-chip"><i class="pulse" aria-hidden="true"></i><span data-en="Coming soon">Próximamente</span></span>
+      <h2 class="h-l" id="soon-title" data-en="This is only the beginning.">Esto apenas empieza.</h2>
+      <p class="lede" data-en="More of Venezuela is on its way. Those on the list hear about it first.">Hay más Venezuela en camino. Quienes estén en la lista se enteran primero.</p>
+    </div>
+    <a class="fx fx-ghost" data-waitlist="web-destinos" href="/lista-de-espera/?origen=web-destinos"><span data-en="Tell me first">Quiero saber primero</span> <span class="knob"><svg class="icon"><use href="#i-arrow"/></svg></span></a>
+  </div>
+  <ul class="soon-grid rv" role="list">
+    <li class="sealed"><svg class="icon"><use href="#i-mtn"/></svg><small data-en="Mountains">Montaña</small><span class="redact" aria-hidden="true"></span><span class="sr-only" data-en="Destination to be announced">Destino por anunciar</span><p data-en="Páramo, mist and hot chocolate.">Páramo, neblina y chocolate caliente.</p></li>
+    <li class="sealed"><svg class="icon"><use href="#i-falls"/></svg><small data-en="Tepuis">Tepuyes</small><span class="redact" aria-hidden="true"></span><span class="sr-only" data-en="Destination to be announced">Destino por anunciar</span><p data-en="Waterfalls that drop from the clouds.">Cascadas que caen desde las nubes.</p></li>
+    <li class="sealed"><svg class="icon"><use href="#i-wave"/></svg><small data-en="Islands">Islas</small><span class="redact" aria-hidden="true"></span><span class="sr-only" data-en="Destination to be announced">Destino por anunciar</span><p data-en="Turquoise water, one short flight away.">Agua turquesa a un vuelo corto.</p></li>
+    <li class="sealed"><svg class="icon"><use href="#i-sun"/></svg><small data-en="Dunes">Médanos</small><span class="redact" aria-hidden="true"></span><span class="sr-only" data-en="Destination to be announced">Destino por anunciar</span><p data-en="Sand dunes that end at the Caribbean.">Dunas que terminan en el Caribe.</p></li>
+  </ul>
 </section>
 
 <section class="prov" id="proveedores" aria-labelledby="prov-title">
@@ -204,17 +223,19 @@
       <h2 class="h-l" id="prov-title" data-en="Your service,<br><span>on the next trip.</span>">Tu servicio,<br><span>en el próximo viaje.</span></h2>
       <p class="lede" data-en="Behind every trip there's someone who hosts, drives, guides and cooks. If you offer a tourism service in Venezuela, Lesgou puts it in front of groups that are already planning their trip.">Detrás de cada viaje hay alguien que recibe, lleva, guía y cocina. Si ofreces un servicio turístico en Venezuela, Lesgou lo pone frente a grupos que ya están armando su viaje.</p>
       <div class="prov-contact">
-        <a class="fx fx-teal" href="https://wa.me/584244500211" target="_blank" rel="noopener"><svg class="icon"><use href="#i-chat"/></svg><span><span data-en="Message us on WhatsApp">Escríbenos por WhatsApp</span><small>+58 424-4500211</small></span></a>
-        <a class="fx fx-ghost" href="mailto:diegosilva06092001@gmail.com"><svg class="icon"><use href="#i-mail"/></svg><span><span data-en="Send us an email">Escríbenos un correo</span><small>diegosilva06092001@gmail.com</small></span></a>
+        <a class="fx fx-teal" href="https://wa.me/584244500211" target="_blank" rel="noopener"><svg class="icon"><use href="#i-chat"/></svg><span data-en="Message us on WhatsApp">Escríbenos por WhatsApp</span></a>
+        <a class="fx fx-ghost" href="mailto:diegosilva06092001@gmail.com"><svg class="icon"><use href="#i-mail"/></svg><span data-en="Send us an email">Mándanos un correo</span></a>
       </div>
       <p class="commission" data-en="Commission-based model. Terms are agreed according to your type of service.">Modelo por comisión. Las condiciones se acuerdan según tu tipo de servicio.</p>
     </div>
 
     <form class="pform sheet rv" id="pform" novalidate aria-labelledby="pf-title">
       <div class="grab"></div>
-      <div class="pf-head"><b id="pf-title" data-en="Join Lesgou">Súmate a Lesgou</b><span class="example" data-en="2 MINUTES">2 MINUTOS</span></div>
-      <p class="pf-sub" data-en="What do you offer? Pick all that apply.">¿Qué ofreces? Elige todo lo que aplique.</p>
-      <div class="tiles" role="group" aria-labelledby="pf-title">
+      <button type="button" class="pf-head" id="ptoggle" aria-expanded="false" aria-controls="pcol"><span class="pf-ht"><b id="pf-title" data-en="Join Lesgou">Súmate a Lesgou</b><small data-en="Do you offer a tourism service? It takes 2 minutes.">¿Ofreces un servicio turístico? Toma 2 minutos.</small></span><span class="sw" aria-hidden="true"></span></button>
+
+      <div class="pcol" id="pcol"><div id="pinner"><div class="pfields">
+      <p class="pf-sub" id="pf-sub" data-en="What do you offer? Pick all that apply.">¿Qué ofreces? Elige todo lo que aplique.</p>
+      <div class="tiles" role="group" aria-labelledby="pf-sub">
         <label class="tile"><input type="checkbox" name="tipo" value="Hotel"><span><svg class="icon"><use href="#i-bed"/></svg>Hotel</span></label>
         <label class="tile"><input type="checkbox" name="tipo" value="Posada"><span><svg class="icon"><use href="#i-home"/></svg>Posada</span></label>
         <label class="tile"><input type="checkbox" name="tipo" value="Apartamento o casa"><span><svg class="icon"><use href="#i-key"/></svg><span data-en="Rental">Alquiler</span></span></label>
@@ -226,9 +247,6 @@
         <label class="tile"><input type="checkbox" name="tipo" value="Vuelos"><span><svg class="icon"><use href="#i-plane"/></svg><span data-en="Flights">Vuelos</span></span></label>
         <label class="tile"><input type="checkbox" name="tipo" value="Otro"><span><svg class="icon"><use href="#i-plus"/></svg><span data-en="Other">Otro</span></span></label>
       </div>
-      <div class="pstart"><button class="fx fx-teal" type="button" id="pnext"><span data-en="Continue">Continuar</span> <span class="knob"><svg class="icon"><use href="#i-down"/></svg></span></button></div>
-
-      <div class="pcol" id="pcol"><div id="pinner"><div class="pfields">
         <div class="field-row" id="potherRow" hidden><span class="ico"><svg class="icon"><use href="#i-plus"/></svg></span><div class="fi"><label for="pOt" data-en="What else?">¿Qué otro servicio?</label><input id="pOt" placeholder="Ej: paseos en kayak" data-en-placeholder="E.g. kayak tours"></div></div>
         <div class="field-row"><span class="ico"><svg class="icon"><use href="#i-home"/></svg></span><div class="fi"><label for="pBiz" data-en="Business name">Nombre del negocio</label><input id="pBiz" autocomplete="organization" placeholder="Ej: Posada Brisa" data-en-placeholder="E.g. Posada Brisa"></div></div>
         <div class="field-row"><span class="ico"><svg class="icon"><use href="#i-user"/></svg></span><div class="fi"><label for="pName" data-en="Your name">Tu nombre</label><input id="pName" autocomplete="name"></div></div>
