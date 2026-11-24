@@ -37,7 +37,7 @@ Single services can also be booked without building a whole trip.
 
 ## Capabilities and Constraints
 - Static HTML/CSS/JS with no build step. Assets live in `/assets` and the Manrope variable font is self-hosted.
-- The site has no backend. Form delivery (waitlist storage, provider form → email) is undecided and needs a form service.
+- Form submissions are stored in the `lesgou-web` Supabase project in Diego's ENV. Visitors can insert form fields only; waitlist and provider submissions remain private. Provider follow-up is manual.
 - Provider contact: WhatsApp +58 424-4500211 and email diegosilva06092001@gmail.com, as the user explicitly provided.
 - Commission-based model for providers. Terms are defined per service type at onboarding.
 

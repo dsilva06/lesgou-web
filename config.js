@@ -1,7 +1,7 @@
-// Public Supabase settings for the forms (Project Settings → API).
-// The publishable/anon key is meant to live in the browser: the tables only
-// accept INSERTs (see supabase/schema.sql), so it cannot read any data.
+// Public Supabase settings for the landing forms.
+// The publishable key is safe in the browser. supabase/schema.sql grants
+// insert-only access to form fields; submissions cannot be read by visitors.
 window.LESGOU_SUPABASE = {
-  url: '',      // e.g. https://abcd1234.supabase.co
-  anonKey: ''   // sb_publishable_... (or the legacy anon key)
+  url: 'https://dsvlwmwkqnidupilylew.supabase.co',
+  anonKey: 'sb_publishable_TrfYIxu5UTG2igU3VK6B8A_N4UbHkiL'
 };

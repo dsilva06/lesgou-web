@@ -38,8 +38,12 @@ alter table public.provider_leads enable row level security;
 
 -- Insert-only for visitors. No select/update/delete policy exists, so the
 -- browser can never read the list back.
-revoke all on public.waitlist, public.provider_leads from anon, authenticated;
-grant insert on public.waitlist, public.provider_leads to anon;
+revoke all on public.waitlist, public.provider_leads from public, anon, authenticated;
+-- Visitors can provide form fields only; IDs and timestamps use server defaults.
+grant insert (country, first_name, last_name, email, phone, cedula, source, language)
+  on public.waitlist to anon;
+grant insert (services, business_name, contact_name, location, email, phone, website, message, contact_via, language)
+  on public.provider_leads to anon;
 
 drop policy if exists "visitors can join the waitlist" on public.waitlist;
 create policy "visitors can join the waitlist" on public.waitlist
@@ -48,3 +52,13 @@ create policy "visitors can join the waitlist" on public.waitlist
 drop policy if exists "providers can send their details" on public.provider_leads;
 create policy "providers can send their details" on public.provider_leads
   for insert to anon with check (true);
+
+-- The optional automatic-RLS event trigger is internal database infrastructure.
+-- Keep the trigger working while preventing direct calls through the Data API.
+do $permissions$
+begin
+  if to_regprocedure('public.rls_auto_enable()') is not null then
+    revoke execute on function public.rls_auto_enable() from public, anon, authenticated;
+  end if;
+end
+$permissions$;
