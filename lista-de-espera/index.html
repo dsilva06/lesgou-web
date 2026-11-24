@@ -41,6 +41,30 @@
     .field-row select option{background:var(--sheet);color:var(--text)}
     .field-row:focus-within{background:rgba(47,191,166,.06)}
     .field-row:focus-within .ico{background:var(--teal);color:var(--teal-ink)}
+    .cbtn{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;border:0;background:none;padding:2px 0;font:inherit;font-size:1rem;font-weight:650;color:var(--text);cursor:pointer;text-align:left;outline:0}
+    .cbtn .ph{color:#8ea3a9;font-weight:500}
+    .cbtn .chev{width:18px;height:18px;color:var(--muted);flex:none;transition:transform .45s var(--spring)}
+    .crow.open .chev{transform:rotate(180deg);color:var(--teal-hi)}
+    .crow{cursor:pointer}
+    .flag{font-size:1.15rem;line-height:1;margin-right:8px}
+    .cpick{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s var(--out)}
+    .cpick.show{grid-template-rows:1fr}
+    .cpick>div{overflow:hidden;min-height:0}
+    .csearch{display:flex;align-items:center;gap:10px;margin:4px 18px 8px;padding:0 14px;min-height:48px;border-radius:99px;background:rgba(0,0,0,.22)}
+    .csearch .icon{width:20px;height:20px;color:var(--teal);flex:none}
+    .csearch input{flex:1;min-width:0;border:0;background:none;font:inherit;font-size:1rem;font-weight:650;color:var(--text);outline:0;padding:12px 0}
+    .csearch input::placeholder{color:#8ea3a9;font-weight:500}
+    .csearch input::-webkit-search-cancel-button{filter:invert(.7)}
+    .csearch:focus-within{box-shadow:0 0 0 2px var(--teal)}
+    .clist{list-style:none;margin:0;padding:0 8px 10px;max-height:min(300px,42svh);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--sheet-2) transparent}
+    .clist li[role=option]{display:flex;align-items:center;gap:4px;min-height:46px;padding:0 12px;border-radius:14px;cursor:pointer;font-weight:650;transition:background .15s}
+    .clist li[role=option] .n{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .clist li[role=option] .d{color:var(--muted);font-size:.88rem;font-variant-numeric:tabular-nums}
+    .clist li[role=option].act{background:rgba(238,246,244,.07)}
+    .clist li[role=option][aria-selected=true]{color:var(--teal-hi)}
+    .clist li[role=option][aria-selected=true] .d{color:var(--teal-hi)}
+    .clist .grp{padding:10px 12px 4px;font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+    .clist .none{padding:16px 12px;color:var(--muted)}
     .two{display:grid;grid-template-columns:1fr 1fr}
     .two .field-row+.field-row{border-left:1px solid var(--line)}
     .phone-in{display:flex;gap:8px;align-items:center}
@@ -78,6 +102,8 @@
 </head>
 <body>
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-search" viewBox="0 0 24 24"><path d="M10.5 17a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13ZM15.5 15.5 20 20"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
   <symbol id="i-user" viewBox="0 0 24 24"><path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM4 21c.6-4 3.8-6.5 8-6.5s7.4 2.5 8 6.5"/></symbol>
@@ -110,25 +136,13 @@
     <div class="grab"></div>
     <div class="card-head"><b id="f-title" data-en="Your spot is waiting.">Tu lugar te espera.</b><p data-en="One minute. Five details. Done.">Un minuto. Cinco datos. Listo.</p></div>
     <div class="fields">
-      <div class="field-row"><span class="ico"><svg class="icon"><use href="#i-pin"/></svg></span><div class="fi"><label for="country" data-en="Country">País</label>
-        <select id="country" autocomplete="country">
-          <option value="" data-en="Choose your country">Elige tu país</option>
-          <option value="VE" data-p="+58">Venezuela</option>
-          <option value="CO" data-p="+57">Colombia</option>
-          <option value="US" data-p="+1" data-en="United States">Estados Unidos</option>
-          <option value="ES" data-p="+34" data-en="Spain">España</option>
-          <option value="PA" data-p="+507" data-en="Panama">Panamá</option>
-          <option value="CL" data-p="+56">Chile</option>
-          <option value="AR" data-p="+54">Argentina</option>
-          <option value="PE" data-p="+51" data-en="Peru">Perú</option>
-          <option value="MX" data-p="+52" data-en="Mexico">México</option>
-          <option value="DO" data-p="+1" data-en="Dominican Republic">República Dominicana</option>
-          <option value="EC" data-p="+593">Ecuador</option>
-          <option value="IT" data-p="+39" data-en="Italy">Italia</option>
-          <option value="PT" data-p="+351">Portugal</option>
-          <option value="CA" data-p="+1" data-en="Canada">Canadá</option>
-          <option value="OT" data-p="+" data-en="Other">Otro</option>
-        </select></div></div>
+      <div class="field-row crow" id="crow"><span class="ico"><svg class="icon"><use href="#i-pin"/></svg></span><div class="fi"><label for="cbtn" data-en="Country">País</label>
+        <button type="button" class="cbtn" id="cbtn" aria-expanded="false" aria-controls="cpick"><span id="cval" class="ph">Elige tu país</span><svg class="icon chev" aria-hidden="true"><use href="#i-down"/></svg></button>
+        <input type="hidden" id="country"></div></div>
+      <div class="cpick" id="cpick"><div id="cpin">
+        <div class="csearch"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><input id="cq" type="search" role="combobox" aria-expanded="true" aria-controls="clist" aria-autocomplete="list" autocomplete="off" spellcheck="false" placeholder="Busca tu país" data-en-placeholder="Search your country" aria-label="Busca tu país" data-en-aria="Search your country"></div>
+        <ul class="clist" id="clist" role="listbox" aria-label="Países" data-en-aria="Countries"></ul>
+      </div></div>
       <div class="two">
         <div class="field-row"><span class="ico"><svg class="icon"><use href="#i-user"/></svg></span><div class="fi"><label for="fn" data-en="First name">Nombre</label><input id="fn" autocomplete="given-name"></div></div>
         <div class="field-row"><div class="fi"><label for="ln" data-en="Last name">Apellido</label><input id="ln" autocomplete="family-name"></div></div>
@@ -173,7 +187,7 @@
     es: { toggle: 'EN', label: 'Cambiar idioma a inglés', title: 'Reserva tu lugar · Lesgou', fields: 'Completa todos los campos para reservar tu lugar.', email: 'Revisa tu correo, parece que le falta algo.', send: 'No pudimos guardar tu lugar. Inténtalo de nuevo.', ok: n => `Listo, ${n}.` },
     en: { toggle: 'ES', label: 'Switch language to Spanish', title: 'Reserve your spot · Lesgou', fields: 'Fill in every field to reserve your spot.', email: 'Check your email, something seems to be missing.', send: "We couldn't save your spot. Please try again.", ok: n => `Done, ${n}.` }
   };
-  let lang = 'es';
+  let lang = 'es', onLang = () => {};
   const orig = { h: new WeakMap(), a: new WeakMap(), p: new WeakMap() };
   const sw = (el, m, attr, en, on) => { if (!m.has(el)) m.set(el, attr ? el.getAttribute(attr) : el.innerHTML); const v = on ? en : m.get(el); attr ? el.setAttribute(attr, v) : (el.innerHTML = v); };
   function setLang(l) {
@@ -185,6 +199,7 @@
     const tg = document.querySelector('.language-toggle'); tg.textContent = S[lang].toggle; tg.setAttribute('aria-label', S[lang].label); tg.setAttribute('aria-pressed', String(on));
     document.title = S[lang].title;
     try { localStorage.setItem('lesgou-language', lang); } catch (e) {}
+    onLang();
   }
   document.querySelector('.language-toggle').addEventListener('click', () => setLang(lang === 'en' ? 'es' : 'en'));
   let stored = null; try { stored = localStorage.getItem('lesgou-language'); } catch (e) {}
@@ -198,11 +213,86 @@
   });
 
   const form = document.getElementById('form'), country = document.getElementById('country');
-  country.addEventListener('change', () => {
-    const o = country.selectedOptions[0];
-    document.getElementById('pp').textContent = (o && o.dataset.p) || '+';
-    document.getElementById('ced').classList.toggle('show', country.value === 'VE');
+  const bar = document.querySelector('.bar');
+  const onScroll = () => bar.classList.toggle('scrolled', scrollY > 10);
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  /* ---------- country picker: every country, searchable ---------- */
+  // ISO code -> dial code. Names come from the browser (Intl.DisplayNames) in the active language.
+  const DIAL = 'AF93 AX358 AL355 DZ213 AS1 AD376 AO244 AI1 AG1 AR54 AM374 AW297 AU61 AT43 AZ994 BS1 BH973 BD880 BB1 BY375 BE32 BZ501 BJ229 BM1 BT975 BO591 BQ599 BA387 BW267 BR55 VG1 BN673 BG359 BF226 BI257 KH855 CM237 CA1 CV238 KY1 CF236 TD235 CL56 CN86 CO57 KM269 CG242 CD243 CK682 CR506 CI225 HR385 CU53 CW599 CY357 CZ420 DK45 DJ253 DM1 DO1 EC593 EG20 SV503 GQ240 ER291 EE372 SZ268 ET251 FK500 FO298 FJ679 FI358 FR33 GF594 PF689 GA241 GM220 GE995 DE49 GH233 GI350 GR30 GL299 GD1 GP590 GU1 GT502 GG44 GN224 GW245 GY592 HT509 HN504 HK852 HU36 IS354 IN91 ID62 IR98 IQ964 IE353 IM44 IL972 IT39 JM1 JP81 JE44 JO962 KZ7 KE254 KI686 XK383 KW965 KG996 LA856 LV371 LB961 LS266 LR231 LY218 LI423 LT370 LU352 MO853 MG261 MW265 MY60 MV960 ML223 MT356 MH692 MQ596 MR222 MU230 YT262 MX52 FM691 MD373 MC377 MN976 ME382 MS1 MA212 MZ258 MM95 NA264 NR674 NP977 NL31 NC687 NZ64 NI505 NE227 NG234 NU683 KP850 MK389 MP1 NO47 OM968 PK92 PW680 PS970 PA507 PG675 PY595 PE51 PH63 PL48 PT351 PR1 QA974 RE262 RO40 RU7 RW250 BL590 SH290 KN1 LC1 MF590 PM508 VC1 WS685 SM378 ST239 SA966 SN221 RS381 SC248 SL232 SG65 SX1 SK421 SI386 SB677 SO252 ZA27 KR82 SS211 ES34 LK94 SD249 SR597 SE46 CH41 SY963 TW886 TJ992 TZ255 TH66 TL670 TG228 TK690 TO676 TT1 TN216 TR90 TM993 TC1 TV688 UG256 UA380 AE971 GB44 US1 UY598 UZ998 VU678 VA39 VE58 VN84 VI1 WF681 EH212 YE967 ZM260 ZW263'
+    .split(' ').map(x => ({ code: x.slice(0, 2), dial: '+' + x.slice(2) }));
+  const TOP = ['VE', 'CO', 'US', 'ES', 'PA', 'CL', 'AR', 'PE', 'MX'];
+  const CS = {
+    es: { top: 'Más comunes', all: 'Todos los países', none: 'No encontramos ese país.' },
+    en: { top: 'Most common', all: 'All countries', none: "We couldn't find that country." }
+  };
+  const flag = c => String.fromCodePoint(...[...c].map(ch => 127397 + ch.charCodeAt(0)));
+  const fold = x => x.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  const namer = l => { try { const d = new Intl.DisplayNames([l], { type: 'region' }); return c => d.of(c) || c; } catch (e) { return c => c; } };
+  const nameEs = namer('es'), nameEn = namer('en');
+  DIAL.forEach(c => { c.es = nameEs(c.code); c.en = nameEn(c.code); c.key = fold(c.es + ' ' + c.en + ' ' + c.code + ' ' + c.dial); });
+  const byCode = Object.fromEntries(DIAL.map(c => [c.code, c]));
+
+  const crow = document.getElementById('crow'), cbtn = document.getElementById('cbtn'), cval = document.getElementById('cval');
+  const cpick = document.getElementById('cpick'), cpin = document.getElementById('cpin'), cq = document.getElementById('cq'), clist = document.getElementById('clist');
+  let shown = [], active = -1;
+
+  function renderList() {
+    const q = fold(cq.value.trim()).replace(/^\+/, '+');
+    const sorted = DIAL.slice().sort((a, b) => a[lang].localeCompare(b[lang], lang));
+    const opt = c => `<li role="option" id="c-${c.code}" data-c="${c.code}" aria-selected="${country.value === c.code}"><span class="flag" aria-hidden="true">${flag(c.code)}</span><span class="n">${c[lang]}</span><span class="d">${c.dial}</span></li>`;
+    let html;
+    if (!q) {
+      shown = TOP.map(c => byCode[c]).concat(sorted);
+      html = `<li class="grp" role="presentation">${CS[lang].top}</li>` + TOP.map(c => opt(byCode[c])).join('') +
+             `<li class="grp" role="presentation">${CS[lang].all}</li>` + sorted.map(opt).join('');
+    } else {
+      // names that start with the query first, then any other match
+      shown = sorted.filter(c => c.key.includes(q)).sort((a, b) => (fold(b[lang]).startsWith(q)) - (fold(a[lang]).startsWith(q)));
+      html = shown.length ? shown.map(opt).join('') : `<li class="none" role="presentation">${CS[lang].none}</li>`;
+    }
+    clist.innerHTML = html;
+    setActive(q && shown.length ? 0 : -1);
+  }
+  function setActive(i) {
+    const items = clist.querySelectorAll('li[role=option]');
+    items.forEach(li => li.classList.remove('act'));
+    active = i;
+    if (i < 0 || !items[i]) { cq.removeAttribute('aria-activedescendant'); return; }
+    items[i].classList.add('act'); items[i].scrollIntoView({ block: 'nearest' });
+    cq.setAttribute('aria-activedescendant', items[i].id);
+  }
+  function openPicker(open) {
+    cpick.classList.toggle('show', open); crow.classList.toggle('open', open);
+    cbtn.setAttribute('aria-expanded', String(open)); cpin.inert = !open;
+    if (open) { cq.value = ''; renderList(); setTimeout(() => cq.focus({ preventScroll: true }), 120); }
+  }
+  function paintCountry() {
+    const c = byCode[country.value];
+    cval.className = c ? '' : 'ph';
+    cval.innerHTML = c ? `<span class="flag" aria-hidden="true">${flag(c.code)}</span>${c[lang]}` : (lang === 'en' ? 'Choose your country' : 'Elige tu país');
+  }
+  function pickCountry(code) {
+    country.value = code; paintCountry();
+    document.getElementById('pp').textContent = byCode[code].dial;
+    document.getElementById('ced').classList.toggle('show', code === 'VE');
+    if (navigator.vibrate) navigator.vibrate(6);
+    openPicker(false); cbtn.focus({ preventScroll: true });
+  }
+  openPicker(false);
+  crow.addEventListener('click', e => { if (!e.target.closest('label')) openPicker(!cpick.classList.contains('show')); });
+  crow.querySelector('label').addEventListener('click', e => { e.preventDefault(); openPicker(!cpick.classList.contains('show')); });
+  cq.addEventListener('input', renderList);
+  clist.addEventListener('click', e => { const li = e.target.closest('li[role=option]'); if (li) pickCountry(li.dataset.c); });
+  cq.addEventListener('keydown', e => {
+    const n = clist.querySelectorAll('li[role=option]').length;
+    if (e.key === 'ArrowDown') { e.preventDefault(); setActive(Math.min(n - 1, active + 1)); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); setActive(Math.max(0, active - 1)); }
+    else if (e.key === 'Enter') { e.preventDefault(); const li = clist.querySelectorAll('li[role=option]')[active]; if (li) pickCountry(li.dataset.c); }
+    else if (e.key === 'Escape') { e.preventDefault(); openPicker(false); cbtn.focus(); }
   });
+  onLang = () => { paintCountry(); if (cpick.classList.contains('show')) renderList(); };
+  onLang();
 
   form.addEventListener('submit', e => {
     e.preventDefault();
