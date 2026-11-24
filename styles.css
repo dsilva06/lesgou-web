@@ -55,12 +55,12 @@ button{font:inherit;color:inherit}
 .sw[aria-checked=true]::after{transform:translateX(20px)}
 .sw[aria-checked=true]:active::after{transform:translateX(14px)}
 
-.seg{position:relative;display:inline-grid;grid-auto-flow:column;grid-auto-columns:1fr;padding:4px;border-radius:99px;background:rgba(238,246,244,.07);box-shadow:inset 0 0 0 1px var(--line)}
+.seg{position:relative;display:inline-grid;grid-auto-flow:column;grid-auto-columns:1fr;padding:4px;border-radius:99px;background:rgba(0,0,0,.22)}
 .seg button{position:relative;z-index:1;border:0;background:none;padding:10px 18px;border-radius:99px;font-weight:750;font-size:.9rem;color:var(--soft);cursor:pointer;transition:color .25s}
 .seg button[aria-pressed=true]{color:var(--teal-ink)}
 .seg .pill{position:absolute;top:4px;bottom:4px;left:4px;border-radius:99px;background:var(--teal);transition:transform .5s var(--spring),width .5s var(--spring)}
 
-.step{display:inline-flex;align-items:center;gap:6px;padding:4px;border-radius:99px;background:rgba(238,246,244,.07);box-shadow:inset 0 0 0 1px var(--line)}
+.step{display:inline-flex;align-items:center;gap:6px;padding:4px;border-radius:99px;background:rgba(0,0,0,.22)}
 .step button{width:40px;height:40px;border-radius:50%;border:0;background:var(--sheet-2);color:var(--text);cursor:pointer;display:grid;place-items:center;transition:transform .4s var(--spring),background .2s}
 .step button:active{transform:scale(.86)}
 .step button.plus{background:var(--teal);color:var(--teal-ink)}
@@ -167,10 +167,10 @@ section{position:relative}
 .split-top .amt{margin-left:auto;font-size:1.5rem}
 .forwho{padding:6px 20px 20px}
 .forwho .seg{width:100%}
-.person{display:flex;gap:12px;align-items:center;margin-top:16px;padding:14px;border-radius:16px;background:rgba(0,0,0,.2);transition:opacity .35s,transform .45s var(--spring)}
+.person{display:flex;gap:12px;align-items:center;margin-top:18px;padding:16px 0 0;border-top:1px solid var(--line);transition:opacity .35s,transform .45s var(--spring)}
 .person.hide{opacity:0;transform:scale(.96);pointer-events:none}
-.note-minor{margin-top:10px;padding:12px 14px;border-radius:14px;background:rgba(245,162,32,.1);color:#ffd18a;font-size:.85rem;font-weight:650}
-.notif{margin:8px 20px 16px;padding:14px 16px;border-radius:18px;background:rgba(238,246,244,.06);display:flex;gap:12px;align-items:flex-start;box-shadow:inset 0 0 0 1px var(--line-2)}
+.note-minor{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);color:#ffd18a;font-size:.85rem;font-weight:650}
+.notif{padding:8px 20px 18px;display:flex;gap:14px;align-items:flex-start}
 .notif .ico{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:var(--mango);color:#1d1404;flex:none}
 .notif b{display:block;font-size:.95rem}
 .notif small{color:var(--soft);font-size:.85rem}
@@ -195,7 +195,7 @@ section{position:relative}
 /* SINGLE SERVICES */
 .single{padding:120px 0}
 .single-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
-.single-row .fx{min-height:64px;padding:0 24px 0 18px;font-size:1.05rem;cursor:default}
+.single-row .fx{min-height:64px;padding:14px 24px 14px 18px;font-size:1.05rem;cursor:default}
 .single-row .fx .icon{width:24px;height:24px;color:var(--teal)}
 
 /* DESTINATIONS */
@@ -219,7 +219,7 @@ section{position:relative}
 .prov .h-l span{color:var(--teal)}
 .prov .lede{margin-top:20px}
 .prov-contact{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-.prov-contact small{display:block;font-weight:650;font-size:.78rem;opacity:.8;line-height:1.1}
+.prov-contact small{display:block;font-weight:650;font-size:.78rem;line-height:1.1}
 .prov-contact .fx{min-height:62px;text-align:left;justify-content:flex-start}
 .prov-contact .fx span{line-height:1.2}
 .commission{margin-top:22px;color:var(--muted);font-size:.92rem;max-width:44ch}
@@ -247,7 +247,7 @@ section{position:relative}
 .field-row .fi{flex:1;min-width:0}
 .field-row label{display:block;font-size:.75rem;font-weight:750;color:var(--muted)}
 .field-row input,.field-row textarea,.field-row select{width:100%;border:0;background:none;padding:2px 0;font:inherit;font-size:1rem;font-weight:650;color:var(--text);outline:0}
-.field-row input::placeholder,.field-row textarea::placeholder{color:#6f878e;font-weight:500}
+.field-row input::placeholder,.field-row textarea::placeholder{color:#8ea3a9;font-weight:500}
 .field-row textarea{resize:none;min-height:48px}
 .field-row select{appearance:none;width:auto;padding-right:4px;color:var(--teal-hi);font-weight:800;cursor:pointer}
 .field-row select option{background:var(--sheet);color:var(--text)}
