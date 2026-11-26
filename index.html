@@ -14,8 +14,10 @@
   <link rel="preload" as="image" href="/assets/margarita.webp" fetchpriority="high">
   <link rel="preload" as="font" href="/assets/manrope-variable.ttf" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/guides-section.css">
   <script src="/config.js" defer></script>
   <script src="/script.js" defer></script>
+  <script src="/guides-preview.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#contenido" data-en="Skip to content">Saltar al contenido</a>
@@ -191,6 +193,15 @@
       <li class="fx fx-ghost"><svg class="icon"><use href="#i-wave"/></svg><span data-en="Activities">Actividades</span></li>
       <li class="fx fx-ghost"><svg class="icon"><use href="#i-food"/></svg><span data-en="Restaurants">Restaurantes</span></li>
     </ul>
+  </div>
+</section>
+
+<!-- Traveler guides: an interactive glimpse of following and repeating a trip. -->
+<section class="guides-section" id="guias" aria-label="Guías de viajeros" data-en-aria="Traveler guides">
+  <div class="wrap">
+    <lesgou-guides-preview>
+      <noscript><h2>Su viaje. Tu próxima aventura.</h2><p>Sigue a viajeros que te inspiran y descubre las guías de sus viajes.</p></noscript>
+    </lesgou-guides-preview>
   </div>
 </section>
 

@@ -1,0 +1,4 @@
+/* Only the added traveler-guides section; existing landing styles remain unchanged. */
+.guides-section{position:relative;padding:clamp(56px,6vw,96px) 0 clamp(100px,11vw,150px);scroll-margin-top:100px}
+.guides-section lesgou-guides-preview{display:block;min-width:0}
+@media(max-width:760px){.guides-section{padding:48px 0 100px;scroll-margin-top:90px}}
