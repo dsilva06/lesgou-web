@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#08141c">
   <meta name="robots" content="noindex">
-  <title>Reserva tu lugar · Lesgou</title>
-  <meta name="description" content="Llega primero a Lesgou. Reserva tu lugar en la lista de espera.">
+  <title>Lista de espera · Lesgou</title>
+  <meta name="description" content="Únete a la lista de espera de Lesgou. Sé de los primeros en enterarte cuando lancemos.">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <script>
     // Already on the list on this device: go straight to the site.
@@ -22,6 +22,19 @@
     .wl .mega{font-size:clamp(3.4rem,8.6vw,7.6rem)}
     .wl .mega span{display:block}
     .wl .lede{margin-top:24px}
+    .wl-community{display:flex;align-items:center;gap:16px;width:fit-content;max-width:100%;margin-top:26px;padding:16px 20px;border:1px solid rgba(95,214,193,.18);border-radius:22px;background:linear-gradient(130deg,rgba(47,191,166,.1),rgba(16,36,48,.5));backdrop-filter:blur(12px);animation:wl-count-enter .8s var(--out) .12s both}
+    .wl-community-icon{display:grid;place-items:center;flex:none;width:42px;height:42px;border-radius:50%;color:var(--teal-hi);background:rgba(47,191,166,.12)}
+    .wl-community-icon .icon{width:23px;height:23px}
+    .wl-count-line{display:flex;align-items:center;gap:12px}
+    .wl-count{display:inline-flex;align-items:baseline;font-size:2.65rem;font-weight:800;line-height:1.1;letter-spacing:-.035em;font-variant-numeric:tabular-nums;white-space:nowrap}
+    .wl-count-digit{position:relative;display:inline-block;width:.65em;height:1.1em;overflow:hidden;letter-spacing:0}
+    .wl-count-strip{display:flex;flex-direction:column;transform:translateY(calc(var(--digit,0)*-1.1em));transition:transform .75s var(--out)}
+    .wl-count-strip>span{display:block;flex:none;height:1.1em;line-height:1.1;text-align:center}
+    .wl-count-copy{font-size:.95rem;font-weight:650;line-height:1.3;color:var(--soft)}
+    .wl-count-fallback{max-width:23ch;color:var(--soft);font-size:.95rem;line-height:1.5}
+    .wl-community [hidden]{display:none!important}
+    @keyframes wl-count-enter{from{opacity:0;transform:translateY(12px);filter:blur(4px)}to{opacity:1;transform:none;filter:none}}
+    @media(prefers-reduced-motion:reduce){.wl-community{animation:none}.wl-count-strip{transition:none}}
     .perks{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:10px;max-width:420px}
     .perks li{display:flex;align-items:center;gap:12px;font-size:1rem;color:var(--soft)}
     .perks b{color:var(--text)}
@@ -107,6 +120,7 @@
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
   <symbol id="i-user" viewBox="0 0 24 24"><path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM4 21c.6-4 3.8-6.5 8-6.5s7.4 2.5 8 6.5"/></symbol>
+  <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3m1-16a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v2"/></symbol>
   <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 6h18v12H3zM3 7l9 6 9-6"/></symbol>
   <symbol id="i-phone" viewBox="0 0 24 24"><path d="M7 3h10v18H7zM11 18h2"/></symbol>
   <symbol id="i-id" viewBox="0 0 24 24"><path d="M3 5h18v14H3zM7 10a2 2 0 1 0 0-.01M5 16c.5-1.6 1.6-2.5 3-2.5s2.5.9 3 2.5M14 9h4M14 13h4"/></symbol>
@@ -123,8 +137,14 @@
 <div class="wl-bg"><img src="/assets/morrocoy.webp" alt="" width="1920" height="1306"></div>
 <main class="wl">
   <div>
-    <h1 class="mega" data-en="<span>Be first.</span><span class='teal'>Travel differently.</span>"><span>Llega primero.</span><span class="teal">Viaja distinto.</span></h1>
-    <p class="lede" data-en="Your whole trip around Venezuela, connected. Lodging, transfers, activities and restaurants. With your people, in one place.">Todo tu viaje por Venezuela, conectado. Hospedaje, traslados, actividades y restaurantes. Con tu gente, en un solo lugar.</p>
+    <h1 class="mega" data-en="<span>Be among</span><span class='teal'>the first.</span>"><span>Sé de los</span><span class="teal">primeros.</span></h1>
+    <p class="lede" data-en="Join the Lesgou waitlist. We'll let you know when we launch.">Únete a la lista de espera de Lesgou. Te avisamos cuando lancemos.</p>
+    <section class="wl-community" data-waitlist-counter aria-label="La lista de Lesgou" data-en-aria="The Lesgou waitlist" aria-busy="true">
+      <span class="wl-community-icon" aria-hidden="true"><svg class="icon"><use href="#i-people"/></svg></span>
+      <div class="wl-count-line" data-count-line><span class="wl-count" data-count-visual aria-hidden="true">250</span><span class="wl-count-copy" data-en="people on<br>the waitlist">personas<br>en la lista</span></div>
+      <span class="wl-count-fallback" data-count-fallback hidden data-en="Your next trip starts on this list.">Tu próximo viaje empieza en esta lista.</span>
+      <span class="sr-only" data-count-status role="status" aria-live="polite" aria-atomic="true">250 personas en la lista.</span>
+    </section>
     <ul class="perks">
       <li><span class="ico"><svg class="icon"><use href="#i-bolt"/></svg></span><span data-en="<b>First in.</b> Before anyone else."><b>Primero en entrar.</b> Antes que nadie.</span></li>
       <li><span class="ico"><svg class="icon"><use href="#i-check"/></svg></span><span data-en="<b>Your account, ready.</b> From day one."><b>Tu cuenta, lista.</b> Desde el día uno.</span></li>
@@ -134,7 +154,7 @@
 
   <form class="card sheet" id="form" novalidate aria-labelledby="f-title">
     <div class="grab"></div>
-    <div class="card-head"><b id="f-title" data-en="Your spot is waiting.">Tu lugar te espera.</b><p data-en="One minute. Five details. Done.">Un minuto. Cinco datos. Listo.</p></div>
+    <div class="card-head"><b id="f-title" data-en="Join the waitlist">Únete a la lista</b><p data-en="Leave your details and we'll let you know when we launch.">Déjanos tus datos para avisarte del lanzamiento.</p></div>
     <div class="fields">
       <div class="field-row crow" id="crow"><span class="ico"><svg class="icon"><use href="#i-pin"/></svg></span><div class="fi"><label for="cbtn" data-en="Country">País</label>
         <button type="button" class="cbtn" id="cbtn" aria-expanded="false" aria-controls="cpick"><span id="cval" class="ph">Elige tu país</span><svg class="icon chev" aria-hidden="true"><use href="#i-down"/></svg></button>
@@ -152,19 +172,20 @@
       <div class="ced" id="ced"><div><div class="field-row"><span class="ico"><svg class="icon"><use href="#i-id"/></svg></span><div class="fi"><label for="ci" data-en="Cédula (ID)">Cédula</label><div class="phone-in"><select id="cit" aria-label="Tipo de cédula" data-en-aria="ID type"><option>V</option><option>E</option></select><input id="ci" inputmode="numeric" placeholder="12345678"></div></div></div></div></div>
       <div class="wfoot">
         <p class="err" id="err" role="alert"></p>
-        <button class="fx fx-teal" type="submit"><span data-en="Reserve my spot">Reservar mi lugar</span> <span class="knob"><svg class="icon"><use href="#i-arrow"/></svg></span></button>
+        <button class="fx fx-teal" type="submit"><span data-en="Join the waitlist">Quiero estar en la lista</span> <span class="knob"><svg class="icon"><use href="#i-arrow"/></svg></span></button>
         <p class="legal" data-en="By joining you accept our privacy policy.">Al anotarte aceptas nuestra política de privacidad.</p>
       </div>
     </div>
     <div class="done" aria-live="polite">
       <svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><circle class="t" cx="50" cy="50" r="44"/><circle class="d" cx="50" cy="50" r="44"/><circle class="a" cx="50" cy="50" r="44"/><path class="k" d="M31 51 L45 64 L70 37"/></svg>
-      <div class="msg"><h2 id="okTitle"></h2><p data-en="Your spot is yours. Now, meet Lesgou.">Tu lugar es tuyo. Ahora, conoce Lesgou.</p><div class="bar-go"><i></i></div></div>
+      <div class="msg"><h2 id="okTitle"></h2><p data-en="You're on the list. Now, meet Lesgou.">Ya estás en la lista. Ahora, conoce Lesgou.</p><div class="bar-go"><i></i></div></div>
     </div>
   </form>
 </main>
 <p class="credit"><span data-en="Photo">Foto</span>: <a href="https://commons.wikimedia.org/wiki/File:Cayo_Sombrero.JPG" target="_blank" rel="noopener noreferrer">AndreaC11</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a></p>
 
 <script src="/config.js"></script>
+<script type="module" src="/waitlist-counter.mjs"></script>
 <script>
 (() => {
   'use strict';
@@ -176,7 +197,7 @@
     if (supa.anonKey.startsWith('eyJ')) headers.Authorization = `Bearer ${supa.anonKey}`; // legacy JWT anon key
     return fetch(`${supa.url.replace(/\/$/, '')}/rest/v1/waitlist`, { method: 'POST', headers, body: JSON.stringify(row) })
       // 409: this email is already on the list, which is the outcome the visitor wanted.
-      .then(r => { if (!r.ok && r.status !== 409) throw new Error(String(r.status)); });
+      .then(r => { if (!r.ok && r.status !== 409) throw new Error(String(r.status)); return { created: r.status !== 409 }; });
   }
   const KEY = 'lesgou-waitlist';
   document.documentElement.classList.add('js');
@@ -184,8 +205,8 @@
   const origen = new URLSearchParams(location.search).get('origen') || 'directo';
 
   const S = {
-    es: { toggle: 'EN', label: 'Cambiar idioma a inglés', title: 'Reserva tu lugar · Lesgou', fields: 'Completa todos los campos para reservar tu lugar.', email: 'Revisa tu correo, parece que le falta algo.', send: 'No pudimos guardar tu lugar. Inténtalo de nuevo.', ok: n => `Listo, ${n}.` },
-    en: { toggle: 'ES', label: 'Switch language to Spanish', title: 'Reserve your spot · Lesgou', fields: 'Fill in every field to reserve your spot.', email: 'Check your email, something seems to be missing.', send: "We couldn't save your spot. Please try again.", ok: n => `Done, ${n}.` }
+    es: { toggle: 'EN', label: 'Cambiar idioma a inglés', title: 'Lista de espera · Lesgou', fields: 'Completa todos los campos para entrar en la lista.', email: 'Revisa tu correo, parece que le falta algo.', send: 'No pudimos guardar tu lugar. Inténtalo de nuevo.', ok: n => `Listo, ${n}.` },
+    en: { toggle: 'ES', label: 'Switch language to Spanish', title: 'Lesgou waitlist', fields: 'Fill in every field to join the waitlist.', email: 'Check your email, something seems to be missing.', send: "We couldn't save your spot. Please try again.", ok: n => `Done, ${n}.` }
   };
   let lang = 'es', onLang = () => {};
   const orig = { h: new WeakMap(), a: new WeakMap(), p: new WeakMap() };
@@ -314,7 +335,9 @@
       phone: data.telefono, cedula: data.cedula || null, source: origen.slice(0, 60), language: lang
     });
     form.classList.add('busy');
-    Promise.all([sending, new Promise(r => setTimeout(r, 1100))]).then(() => {
+    Promise.all([sending, new Promise(r => setTimeout(r, 1100))]).then(([signup]) => {
+      // Only a successful new INSERT adds one; duplicate emails keep the same total.
+      window.LESGOU_WAITLIST_COUNT?.confirmSignup(signup.created);
       document.getElementById('okTitle').textContent = S[lang].ok(data.nombre);
       form.classList.remove('busy'); form.classList.add('paid');
       if (navigator.vibrate) navigator.vibrate(12);

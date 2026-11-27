@@ -32,6 +32,9 @@ Single services can also be booked without building a whole trip.
 - The site is bilingual: Spanish is primary, and English uses `data-en` attributes swapped by `script.js`.
 - The waitlist lives at a separate URL reached only by shared links (Instagram, WhatsApp, ads). It is not indexed, and the main site reaches it only through subtle entry points.
 - After signing up, the visitor is redirected to the main site, and the browser remembers the signup.
+- The waitlist teaser displays an owner-requested promotional baseline of 250 plus confirmed web signups. The baseline is a display offset, not 250 database records or a verified user metric. Internal reporting must use the actual `waitlist` row count.
+- A read-only `waitlist-count` Edge Function exposes only the actual aggregate. Contact details remain private, and duplicate emails do not add to the total.
+- The counter refreshes on load, every 30 seconds while visible, and after a successful signup. Its Edge Function validates the project's publishable API key itself (`verify_jwt: false`); server credentials come only from the hosted function environment. Tests: `node --test tests/waitlist-count.test.mjs`.
 - Waitlist fields: country, first name, last name, email, phone with country prefix, and cédula (V/E) only when the country is Venezuela.
 - An Instagram contest runs separately on Instagram and is not mentioned on the site.
 
@@ -52,7 +55,7 @@ Single services can also be booked without building a whole trip.
 - App walkthrough video: `~/Projects2/VIDEO-2026-10-16-13-51-37.mp4`. App flows deck: `~/Projects2/Lesgou - Margarita y Morrocoy v2.pdf` (26 pages).
 - Photos: `assets/morrocoy.webp` (Cayo Sombrero, CC BY-SA 3.0, AndreaC11) and `assets/margarita.webp` (Playa El Agua, CC BY-SA 4.0, Juan Pablo Jaimes). Both need attribution.
 - **No real providers, prices, or business names may appear.** No contracts exist yet. App-style examples must use generic descriptors (e.g. "Posada frente al mar", "Chofer por día"), fictional traveler first names, and amounts clearly framed as examples. Public place names (Juan Griego, Playa El Agua, Cayo Sombrero) are fine.
-- No testimonials, user counts, press, or partner logos exist. Do not fabricate them.
+- No testimonials, press, or partner logos exist. Do not fabricate them. The waitlist display offset is the explicit exception documented above; it must not be reused as real traction in other materials.
 
 ## Product Principles
 1. The group is the protagonist: every feature is shown through people travelling together.
