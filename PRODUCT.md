@@ -11,7 +11,7 @@ web
 - **Providers:** anyone offering a tourism service inside Venezuela, such as hotels, posadas, holiday rentals, activities and tours, restaurants, drivers and transfers, car rental, boats and ferries, and flights.
 
 ## Product Purpose
-lesgou.com is the pre-launch site for the Lesgou mobile app (Expo app + Laravel API in `~/Projects2/vayalo-app`). It has three jobs:
+lesgouapp.com is the pre-launch site for the Lesgou mobile app (Expo app + Laravel API in `~/Projects2/vayalo-app`). It has three jobs:
 1. Make travelers understand and want Lesgou, then collect them on a launch waitlist at a separate link-only page.
 2. Let providers get in touch through a contact form, WhatsApp, or email.
 3. Explain the product honestly while the app is unreleased.
