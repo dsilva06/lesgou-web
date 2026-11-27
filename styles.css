@@ -384,6 +384,18 @@ section{position:relative}
   .close .mega{font-size:clamp(2.8rem,13vw,4rem)}
 }
 @media (max-width:480px){.tiles{grid-template-columns:repeat(3,1fr)}}
+/* small phones (iPhone SE, 360px Androids): keep every row inside the screen */
+@media (max-width:380px){
+  .single-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .single-row .fx{min-width:0;padding:10px;gap:8px;font-size:.85rem}
+  .single-row .fx .icon{width:20px;height:20px}
+  .invite{padding:8px 14px 16px;gap:6px}
+  .invite .fx{min-width:0;padding:0 10px;gap:6px;font-size:.84rem}
+  .invite .fx .icon{width:16px;height:16px}
+  .place{flex-basis:86%;padding:18px}
+  .place .mega{font-size:clamp(1.9rem,10vw,2.6rem)}
+  .close .fx>span:first-child{text-wrap:balance}
+}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
