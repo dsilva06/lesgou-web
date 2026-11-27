@@ -156,10 +156,51 @@
     countTo(document.getElementById('pp'), total / N, 2);
     document.querySelectorAll('#items [data-i]').forEach(el => { const it = items[el.dataset.i]; el.textContent = 'USD ' + fmt(it.pp ? it.pp * N : it.shared); });
     document.getElementById('prog').style.width = Math.round(100 / N) + '%';
-    const av = document.getElementById('avas');
-    while (av.children.length < N) { const j = av.children.length, s = document.createElement('span'); s.className = 'ava ' + colours[j] + (first ? '' : ' enter'); s.textContent = people[j]; s.setAttribute('aria-hidden', 'true'); av.appendChild(s); }
-    while (av.children.length > N) av.lastChild.remove();
+    syncAvatars(first);
     const n = document.getElementById('n'); n.textContent = N; if (!first) bump(n);
+  }
+  /* Same spring as the traveler guides: people hop in along an arc and shrink away when they leave. */
+  const av = document.getElementById('avas'), AV_STEP = 26;
+  function avatarPose(node) {
+    const p = node._m.position, x = -24 * (1 - p) ** 2, y = -48 * p * (1 - p);
+    node.style.transform = p === 1 ? 'none' : `translate3d(${x}px,${y}px,0) scale(${.58 + .42 * p})`;
+    node.style.zIndex = p < .46 ? '0' : String(Number(node.dataset.avatar) + 2);
+    node.style.setProperty('--glow', (.14 + .18 * p).toFixed(3));
+  }
+  function tickAvatars(now) {
+    av._frame = null;
+    const dt = av._time ? Math.max(0, (now - av._time) / 1000) : 1 / 60; av._time = now;
+    const f = 20, decay = Math.exp(-f * dt); let moving = false;
+    av.querySelectorAll('[data-avatar]').forEach(node => {
+      const m = node._m;
+      if (reduce) { m.position = m.target; m.velocity = 0; }
+      else {
+        const d = m.position - m.target, blend = m.velocity + f * d;
+        m.position = m.target + (d + blend * dt) * decay;
+        m.velocity = (m.velocity - f * blend * dt) * decay;
+        if (Math.abs(m.position - m.target) < .002 && Math.abs(m.velocity) < .025) { m.position = m.target; m.velocity = 0; }
+      }
+      avatarPose(node);
+      if (m.position === 0 && m.target === 0) { node.remove(); return; }
+      if (m.position !== m.target || m.velocity !== 0) moving = true;
+    });
+    if (moving) av._frame = requestAnimationFrame(tickAvatars); else av._time = null;
+  }
+  function syncAvatars(first) {
+    av.style.width = (34 + AV_STEP * (N - 1)) + 'px';
+    av.querySelectorAll('[data-avatar]').forEach(node => { node._m.target = Number(node.dataset.avatar) < N ? 1 : 0; });
+    for (let i = 0; i < N; i++) {
+      let node = av.querySelector(`[data-avatar="${i}"]`);
+      if (!node) {
+        node = document.createElement('span'); node.className = 'ava ' + colours[i]; node.dataset.avatar = i;
+        node.textContent = people[i]; node.setAttribute('aria-hidden', 'true');
+        node._m = { position: first || reduce ? 1 : .18, velocity: first || reduce ? 0 : 7.5, target: 1 };
+        node.style.left = (i * AV_STEP) + 'px';
+        av.appendChild(node);
+      }
+      node._m.target = 1; avatarPose(node);
+    }
+    if (av._frame == null) av._frame = requestAnimationFrame(tickAvatars);
   }
   document.getElementById('plus').addEventListener('click', () => { if (N < 8) { N++; paintBill(); } });
   document.getElementById('minus').addEventListener('click', () => { if (N > 2) { N--; paintBill(); } });

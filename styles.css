@@ -128,6 +128,8 @@ section{position:relative}
 .bill-foot small{display:block;color:var(--muted);font-size:.8rem}
 .avas .ava{transition:transform .45s var(--spring),opacity .3s}
 .avas .ava.enter{animation:pop .5s var(--spring)}
+#avas{position:relative;display:block;height:34px;transition:width .22s var(--out)}
+#avas .ava{position:absolute;top:0;margin:0;transition:none;backface-visibility:hidden;background:radial-gradient(circle at 28% 21%,rgba(255,255,255,var(--glow,.32)) 0%,rgba(255,255,255,0) 60%),linear-gradient(145deg,color-mix(in srgb,var(--pc) 88%,white),var(--pc) 56%,color-mix(in srgb,var(--pc) 89%,#17323b))}
 @keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
 
 /* CHAT */
