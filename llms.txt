@@ -1,0 +1,32 @@
+# Lesgou
+
+> Lesgou es una app para organizar viajes en grupo por Venezuela. Reúne hospedaje, traslados, lanchas y ferry, actividades y restaurantes en un solo viaje, y cada persona del grupo elige lo suyo y paga su parte desde su teléfono. Está por lanzar; hoy se puede reservar un lugar en la lista de espera.
+
+Lesgou is an app for planning group trips around Venezuela. Each person in the group picks what they want and pays their own share from their phone. It is about to launch.
+
+## Qué hace Lesgou
+
+- Un solo viaje para todo el grupo: quién va, qué hace cada uno y cuánto le toca.
+- Invitación por enlace de WhatsApp; cada quien se une al viaje sin listas en el chat.
+- Pagos divididos: si alguien no participa en algo (por ejemplo, la lancha), su parte se recalcula sola.
+- Pago por otra persona (por ejemplo, un familiar menor de edad), registrando quién autorizó.
+- Avisos de cambios (por ejemplo, la hora del ferry) antes de pagar; nada se cobra hasta que la persona confirma y paga.
+- Métodos de pago: pago móvil, transferencia o tarjeta, en bolívares a la tasa del día. El comprobante queda en el viaje.
+- También se puede reservar un solo servicio: hospedaje, vuelos, traslados, lanchas y ferry, actividades o restaurantes.
+- Guías de viajeros: viajes que otros ya vivieron y que puedes usar como base para tu propio viaje.
+
+## Destinos
+
+- Isla de Margarita (Nueva Esparta).
+- Parque Nacional Morrocoy (Falcón).
+- Próximamente: destinos de montaña, tepuyes, islas y médanos.
+
+## Para prestadores de servicios turísticos
+
+Posadas, hoteles, alquileres, tours y actividades, choferes y traslados, lanchas, alquiler de carros y gastronomía en Venezuela pueden sumarse. Modelo por comisión; las condiciones se acuerdan según el tipo de servicio.
+
+## Enlaces
+
+- [Sitio principal](https://lesgou-web.vercel.app/)
+- [Preguntas frecuentes](https://lesgou-web.vercel.app/#preguntas)
+- [Para proveedores](https://lesgou-web.vercel.app/#proveedores)

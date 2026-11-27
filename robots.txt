@@ -1,0 +1,20 @@
+# Lesgou: open to search engines and AI assistants.
+# The waitlist page carries its own noindex tag, so crawlers must be able to read it.
+User-agent: *
+Allow: /
+
+# AI crawlers, listed explicitly so they know they are welcome.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://lesgou-web.vercel.app/sitemap.xml

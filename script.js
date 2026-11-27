@@ -23,9 +23,9 @@
      data-en-placeholder. Strings built by script live here. */
   const strings = {
     es: {
-      title: 'Lesgou — Que lo difícil sea volver.',
-      description: 'Lesgou conecta todo tu viaje por Venezuela y está hecho para viajar en grupo: quién va, qué hace cada uno y cuánto paga, desde su teléfono. Para viajeros y prestadores de servicios turísticos.',
-      ogTitle: 'Lesgou — Que lo difícil sea volver.',
+      title: 'Lesgou — Viajes en grupo por Venezuela: Margarita, Morrocoy y más',
+      description: 'Organiza tu viaje en grupo por Venezuela en una sola app: hospedaje, traslados, lanchas, actividades y restaurantes en Margarita, Morrocoy y más. Cada quien elige lo suyo y paga su parte con pago móvil, transferencia o tarjeta.',
+      ogTitle: 'Lesgou — Viajes en grupo por Venezuela: Margarita, Morrocoy y más',
       ogDescription: 'Todo el viaje, con tu gente. Cada quien elige lo suyo y paga su parte desde su teléfono.',
       locale: 'es_VE', toggle: 'EN', toggleLabel: 'Cambiar idioma a inglés', num: 'es-VE',
       joined: '✓ Tu lugar está reservado',
@@ -39,9 +39,9 @@
       waIntro: 'Hola Lesgou, quiero sumar mi servicio:'
     },
     en: {
-      title: 'Lesgou — Let the hard part be coming home.',
-      description: 'Lesgou connects your whole trip around Venezuela and is built for group travel: who is going, what each person does and what they pay, from their own phone. For travelers and tourism providers.',
-      ogTitle: 'Lesgou — Let the hard part be coming home.',
+      title: 'Lesgou — Group travel in Venezuela: Margarita, Morrocoy and more',
+      description: 'Plan your group trip around Venezuela in one app: stays, transfers, boats, activities and restaurants in Margarita, Morrocoy and more. Everyone picks what they want and pays their share by pago móvil, bank transfer or card.',
+      ogTitle: 'Lesgou — Group travel in Venezuela: Margarita, Morrocoy and more',
       ogDescription: 'The whole trip, with your people. Everyone picks what they want and pays their share from their own phone.',
       locale: 'en_US', toggle: 'ES', toggleLabel: 'Switch language to Spanish', num: 'en-US',
       joined: '✓ Your spot is reserved',
